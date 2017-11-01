@@ -1,1 +1,22 @@
+Preliminaries
+  State packages needed:
+    rattle.data
+    NbClust
+    flexclust
+    curl
+ Objectives
+ 
+ Introduction (key concepts)
+  pros and cons of kmeans
+  potential issues -> doen't use categorical data (continuous only)
+  formulas
+  
+Application/Why this is useful
 
+(Optional?) Recent Research and Applications
+
+Useful Skills You'll Learn Today
+
+Examples
+
+Additional Resources and Useful Links
