@@ -1,0 +1,6 @@
+---
+title: "Group-project"
+output: html_document
+---
+
+do book of R k-means thing on pg 370ish
