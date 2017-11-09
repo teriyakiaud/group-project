@@ -59,8 +59,8 @@ wssplot <- function(data, nc=15, seed=1234){ #where data is the dataset, nc is t
     wss[i] <- sum(kmeans(data, centers=i)$withinss)}
   plot(1:nc, wss, type="b", xlab="Number of Clusters",
        ylab="Within groups sum of squares")}
-  ###K means, unlike other methods of clustering, requires that the user specify the number of clusters to make. Instead of picking a random number of clusters, one can look at a bend in a graph to determine the number of clusters to use. A graph similar to a Cattell Scree test, which is used in Principle Components Analysis and Kabacoff suggests using the NbClust package as a guide for determing the number of clusters. Kabacoff also suggests plotting the following: total within-groups sum of squares against number of clusters in the k-means solution. More information about a Scree test and an example of one is in R in Action 14.2.1. 
 ```
+###K means, unlike other methods of clustering, requires that the user specify the number of clusters to make. Instead of picking a random number of clusters, one can look at a bend in a graph to determine the number of clusters to use. A graph similar to a Cattell Scree test, which is used in Principle Components Analysis and Kabacoff suggests using the NbClust package as a guide for determing the number of clusters. Kabacoff also suggests plotting the following: total within-groups sum of squares against number of clusters in the k-means solution. More information about a Scree test and an example of one is in R in Action 14.2.1. 
 ```{r}
 wssplot(df)
 library(NbClust)
