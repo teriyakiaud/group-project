@@ -1,29 +1,39 @@
 ---
-title: "Project 1.0"
-output: html_document
+title: "Cluster Analysis"
+authors: Aarti Arora, Andrew Mark, Natalie Robinson, Audrey Tahjadi
+output: 
+  html_document: 
+    toc: TRUE
+    toc_depth: 4
+    toc_float: TRUE
 ---
 
-```{r}
-#Preliminaries
-  State packages needed:
-    rattle.data
-    NbClust
-    flexclust
-    curl
- Objectives
- 
- Introduction (key concepts)
-  pros and cons of kmeans
-  potential issues -> doen't use categorical data (continuous only)
-  formulas
+# Module 23
+# Cluster Analysis
+
+## Preliminaries
+
+* Install these packages in R: {rattle.data}, {NbClust}, {flexclust}, {curl}
+
+## Objectives
+In this module we will learn about k-means clustering, the pros and cons of this method, and why its application is useful. 
+(add more once we actually know what we're doing)
+
+## Introduction {.tabset}
+  ### What is Cluster Analysis?
+  ### K-means Clustering
+    * pros and cons
+    * potential issues (you can only use continuous data, not categorical)
+  ### Formulas
+  ### Why is this useful?
+  ### Recent Research and Applications
+
+## Useful Skills You'll Learn Today
+  * add to this at the end
   
-Application/Why this is useful
+## Example 1 (Wine Data?)
 
-(Optional?) Recent Research and Applications
+## Example 2 (Seed Data?)
 
-Useful Skills You'll Learn Today
-
-Examples
-
-Additional Resources and Useful Links
-```
+## Additional Resources and Useful Links
+  * R in Action Chapter 16: Cluster Analysis
