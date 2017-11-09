@@ -53,7 +53,8 @@ df<-scale(wine[-1])
 #this new dataframe contains a standardized dataset 
 ```
 ```{r}
-wssplot <- function(data, nc=15, seed=1234){ #where data is the dataset, nc is the maximum number of clusters to consider, and seed is the randomly generated dataset
+wssplot <- function(data, nc=15, seed=1234){ #where data is the dataset, 
+#nc is the maximum number of clusters to consider, and seed is the randomly generated dataset
   wss <- (nrow(data)-1)*sum(apply(data,2,var))
   for (i in 2:nc){
     set.seed(seed)
