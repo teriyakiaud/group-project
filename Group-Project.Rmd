@@ -29,7 +29,11 @@ In this module we will learn about k-means clustering, the pros and cons of this
 ### Why is this useful?
   (tab content)
 ### Recent Research and Applications
-  (tab content)
+  (tab content
+  
+  https://ac-els-cdn-com.ezproxy.bu.edu/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=1212e7cc-c582-11e7-afd1-00000aab0f27&acdnat=1510254990_e2794bdbec581af54de5c11ea7d5f23d
+  
+  )
 
 ## Useful Skills You'll Learn Today
   * add to this at the end
@@ -48,13 +52,14 @@ df<-scale(wine[-1])
 #this new dataframe contains a standardized dataset 
 ```
 ```{r}
-wssplot <- function(data, nc=15, seed=1234){
+wssplot <- function(data, nc=15, seed=1234){ #where data is the dataset, nc is the maximum number of clusters to consider, and seed is the randomly generated dataset
   wss <- (nrow(data)-1)*sum(apply(data,2,var))
   for (i in 2:nc){
     set.seed(seed)
     wss[i] <- sum(kmeans(data, centers=i)$withinss)}
   plot(1:nc, wss, type="b", xlab="Number of Clusters",
        ylab="Within groups sum of squares")}
+  ###K means, unlike other methods of clustering, requires that the user specify the number of clusters to make. Instead of picking a random number of clusters, one can look at a bend in a graph to determine the number of clusters to use. A graph similar to a Cattell Scree test, which is used in Principle Components Analysis and Kabacoff suggests using the NbClust package as a guide for determing the number of clusters. Kabacoff also suggests plotting the following: total within-groups sum of squares against number of clusters in the k-means solution. More information about a Scree test and an example of one is in R in Action 14.2.1. 
 ```
 ```{r}
 wssplot(df)
