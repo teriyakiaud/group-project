@@ -11,3 +11,4 @@ v <- "C:/Users/Andy/Desktop/AN 592/data-reanalysis-assignment/seed-data.csv"
 orig <- read.csv(v)
 head(orig)
 ```
+;lkhkkgjl
