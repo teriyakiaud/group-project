@@ -35,8 +35,59 @@ In this module we will learn about k-means clustering, the pros and cons of this
   * add to this at the end
   
 ## Example 1 (Wine Data?)
-
+#This is the example from the R in Action K-means analysis; please consult the R in Action, 16.4.1 (pages 378-382). 
+install.packages("rattle.data") #this package contains the wine dataset; R in Action asks you to download the rattle package however the wine dataset is no longer in the rattle package
+```
+```{r}
+library(rattle.data)
+```
+```{r}
+data(wine, package="rattle.data")
+head(wine)
+df<-scale(wine[-1])
+#this new dataframe contains a standardized dataset 
+```
+```{r}
+wssplot <- function(data, nc=15, seed=1234){
+  wss <- (nrow(data)-1)*sum(apply(data,2,var))
+  for (i in 2:nc){
+    set.seed(seed)
+    wss[i] <- sum(kmeans(data, centers=i)$withinss)}
+  plot(1:nc, wss, type="b", xlab="Number of Clusters",
+       ylab="Within groups sum of squares")}
+```
+```{r}
+wssplot(df)
+library(NbClust)
+set.seed(1234)
+devAskNewPage(ask=TRUE)
+```
+```{r}
+nc<-NbClust(df, min.nc=2, max.nc=15, method="kmeans") #this is how the number of clusters is determined
+table(nc$Best.n[1, ])
+```
+```{r}
+barplot(table(nc$Best.n[1,])
+        xlab="Number of Clusters", ylab = "Number of Criteria", 
+        main= "Number of Clusters Chosen by 26 Criteria")
+#this particular section isn't really working either
+```
+```{r}
+set.seed(1234)
+fit.km<-kmeans(df, 3, nstart=25)
+fit.km$size
+#this is the k means clusters analysis 
+fit.km$centers
+```
+```{r}
+#cross-tabulation of Type and cluster membership:
+ct.km<-table(wine$Type, fit.km$cluster)
+ct.km
+#agreement given by index of -1 to 1
+library(flexclust)
+randIndex(ct.km)
+```
 ## Example 2 (Seed Data?)
 
 ## Additional Resources and Useful Links
-  * R in Action Chapter 16: Cluster Analysis
+  * The Book of R Chapter 16: Cluster Analysis
