@@ -20,13 +20,18 @@ In this module we will learn about k-means clustering, the pros and cons of this
 (add more once we actually know what we're doing)
 
 ## Introduction {.tabset}
-  ### What is Cluster Analysis?
-  ### K-means Clustering
-    * pros and cons
-    * potential issues (you can only use continuous data, not categorical)
-  ### Formulas
-  ### Why is this useful?
-  ### Recent Research and Applications
+### What is Cluster Analysis?
+  (tab content)
+### K-means Clustering
+  (tab content)
+  *pros and cons
+  *potential issues (you can only use continuous data, not categorical)
+### Formulas
+  (tab content)
+### Why is this useful?
+  (tab content)
+### Recent Research and Applications
+  (tab content)
 
 ## Useful Skills You'll Learn Today
   * add to this at the end
