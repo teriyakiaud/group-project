@@ -19,27 +19,54 @@ In this module we will learn about k-means clustering, the pros and cons of this
 
 ## Introduction {.tabset}
 ### What is Cluster Analysis?
-  (tab content)
+
+Cluster analysis uncovers subgroups of observations within a dataset by reducing a large number of observations to a smaller number of **clusters**. A cluster is a group of observations that are more similar to each other than they are to the observations in other groups. 
+
+Two popular clustering approaches are **hierarchical agglomerative clustering** and **partitioning clustering**. 
+
+  1. Hierarchical agglomerative clustering begins with each observation as a cluster. Clusters are then combines until they all merge into a single cluster. Common algorithms include single linkage, complete linkage, average linkage, centroid, and Ward's method.
+  
+  2. Partitioning clustering begins with a specific K which indicated the desired number of clusters. Observations are then divided into cohesive clusters. Common algorithms include k-means and partitioning around medoids (PAM). 
+
+Today we will only focus on k-means clustering.  
+  
 ### K-means Clustering
-  (tab content)
-  *pros and cons
-  *potential issues (you can only use continuous data, not categorical)
-### Formulas
-  (tab content)
+  
+To understand the k-means algorithm conceptually, our textbook "R in Action" provides us with the following steps:
+  
+    1. Select K centroids (K rows chosen at random)
+    2. Assign each data point to its closest centroid
+    3. Recalculate the centroids as the average of all data points in a cluster (that is,
+the centroids are p-length mean vectors, where p is the number of variables).
+    4. Assign data points to their closest centroids.
+    5. Continue steps 3 and 4 until the observations aren’t reassigned or the maximum number of iterations (R uses 10 as a default) is reached.
+  
+To do this, R uses an algorithm that partitions observations into k groups so that the sum of squares of the observations to their assigned cluster centers is a minimum. Each observation is assigned to the cluster with the smallest value of:
+
+$$ ss(k) = \sum_{i=1}^n \sum_{j=0}^p (x_{ij} - \bar{x}_{kj})^2 $$
+k = cluster
+x_{ij} = the value of the jth variable for the ith observation
+\bar{x}_{kj} = the mean of the jth variable for the kth cluster
+p = the number of variables
+
+Each of the cluster analysis methods provide different advantages. K-means is able to handle larger datasets, and observations are not permanently assigned to a specific cluster. However, because the mean is used, all variables must be continuous. If working with categorical data, another method must be used. Additionally, outliers can greatly affect results. K-means also performs poorly with non-convex clusters.
+  
 ### Why is this useful?
   (tab content)
 ### Recent Research and Applications
-  (tab content
+  Cluster analysis is commonly used in the biolgical and behavioral sciences, marketing, and medical research. 
   
   https://ac-els-cdn-com.ezproxy.bu.edu/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=1212e7cc-c582-11e7-afd1-00000aab0f27&acdnat=1510254990_e2794bdbec581af54de5c11ea7d5f23d
   
-  )
+
 
 ## Useful Skills You'll Learn Today
   * add to this at the end
   
 ## Example 1 (Wine Data using R in Action)
-#This is the example from the R in Action K-means analysis; please consult the R in Action, 16.4.1 (pages 378-382). 
+
+**This is the example from the R in Action K-means analysis; please consult the R in Action, 16.4.1 (pages 378-382). **
+
 install.packages("rattle.data") #this package contains the wine dataset; 
 #R in Action asks you to download the rattle package however the wine dataset is no longer in the rattle package
 
@@ -132,7 +159,6 @@ devAskNewPage(ask=TRUE)
 ```
 
 As in the wine data, we can see a clear decrease in the within group sum of squares between 1, 2, and 3 clusters and then little decrease after. This suggests that 3 is an appropriate number of clusters. The figure also shows that there will most likely not be more than 15 clusters.
-
 
 ## Additional Resources and Useful Links
   * The Book of R Chapter 16: Cluster Analysis
