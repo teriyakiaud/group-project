@@ -104,9 +104,29 @@ randIndex(ct.km)
 ```
 ## Example 2 (Seed Data?)
 ###Seed Data File
+
+This dataset contains 7 measurements for geometric properties of 210 kernels from 3 different varieties of wheat.
 ```{r}
-mydata<-read.csv(file = "tabseeddata.csv", header = TRUE, sep = ",")
-mydata
+seeddata<-read.csv(file = "tabseeddata.csv", header = TRUE, sep = ",")
+head(seeddata)
+ds<- scale(seeddata[-1])
+```
+
+```{r}
+wssplot <- function(data, nc=15, seed=1234){ 
+  wss <- (nrow(data)-1)*sum(apply(data,2,var))
+  for (i in 2:nc){
+    set.seed(seed)
+    wss[i] <- sum(kmeans(data, centers=i)$withinss)}
+  plot(1:nc, wss, type="b", xlab="Number of Clusters",
+       ylab="Within groups sum of squares")
+  }
+```
+```{r}
+wssplot(ds)
+library(NbClust)
+set.seed(1234)
+devAskNewPage(ask=TRUE)
 ```
 
 ## Additional Resources and Useful Links
