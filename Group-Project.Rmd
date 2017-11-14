@@ -134,14 +134,22 @@ ct.km
 library(flexclust)
 randIndex(ct.km)
 ```
+<<<<<<< HEAD
 ## Example 2 Seed Data
 
 **Seed Data File**
+=======
+
+## Example 2 (Seed Data?)
+###Seed Data File
+>>>>>>> 0eaa1f0b3cce381dee5d1ba00340b92974ec25bc
 
 This dataset contains 7 measurements for geometric properties of 210 kernels from 3 different varieties of wheat.
 
 ```{r}
-seeddata<-read.csv(file = "tabseeddata.csv", header = TRUE, sep = ",")
+library(curl)
+f <- curl(https://raw.githubusercontent.com/teriyakiaud/group-project/master/tabseeddata.csv)
+seeddata<-read.csv(file = f, header = TRUE, sep = ",")
 head(seeddata)
 ds<- scale(seeddata[-1])
 ```
@@ -166,6 +174,15 @@ devAskNewPage(ask=TRUE)
 
 As in the wine data, we can see a clear decrease in the within group sum of squares between 1, 2, and 3 clusters and then little decrease after. This suggests that 3 is an appropriate number of clusters. The figure also shows that there will most likely not be more than 15 clusters.
 
+<<<<<<< HEAD
+```{r}
+nc<-NbClust(df, min.nc=2, max.nc=15, method="kmeans") 
+table(nc$Best.n[1, ])
+```
+
+
+=======
+>>>>>>> 21e4c765ceeb58123b203b02ad32d0d226f2aa7f
 ## Additional Resources and Useful Links
   * The Book of R Chapter 16: Cluster Analysis
 
