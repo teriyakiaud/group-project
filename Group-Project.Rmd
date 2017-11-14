@@ -109,7 +109,9 @@ randIndex(ct.km)
 This dataset contains 7 measurements for geometric properties of 210 kernels from 3 different varieties of wheat.
 
 ```{r}
-seeddata<-read.csv(file = "tabseeddata.csv", header = TRUE, sep = ",")
+library(curl)
+f <- curl(https://raw.githubusercontent.com/teriyakiaud/group-project/master/tabseeddata.csv)
+seeddata<-read.csv(file = f, header = TRUE, sep = ",")
 head(seeddata)
 ds<- scale(seeddata[-1])
 ```
