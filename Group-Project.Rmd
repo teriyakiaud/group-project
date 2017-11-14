@@ -53,10 +53,14 @@ Each of the cluster analysis methods provide different advantages. K-means is ab
   
 ### Why is this useful?
   (tab content)
-### Recent Research and Applications
-  Cluster analysis is commonly used in the biolgical and behavioral sciences, marketing, and medical research. 
   
-  https://ac-els-cdn-com.ezproxy.bu.edu/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=1212e7cc-c582-11e7-afd1-00000aab0f27&acdnat=1510254990_e2794bdbec581af54de5c11ea7d5f23d
+### Recent Research and Applications
+
+Cluster analysis is commonly used in the biolgical and behavioral sciences, marketing, and medical research. 
+  
+Check out some of these examples:
+  
+https://ac-els-cdn-com.ezproxy.bu.edu/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=1212e7cc-c582-11e7-afd1-00000aab0f27&acdnat=1510254990_e2794bdbec581af54de5c11ea7d5f23d
   
 
 
@@ -67,8 +71,10 @@ Each of the cluster analysis methods provide different advantages. K-means is ab
 
 **This is the example from the R in Action K-means analysis; please consult the R in Action, 16.4.1 (pages 378-382). **
 
-install.packages("rattle.data") #this package contains the wine dataset; 
-#R in Action asks you to download the rattle package however the wine dataset is no longer in the rattle package
+```{r}
+install.packages("rattle.data") #this package contains the wine dataset 
+```
+R in Action asks you to download the rattle package however the wine dataset is no longer in the rattle package
 
 ```{r}
 library(rattle.data)
@@ -77,8 +83,7 @@ library(rattle.data)
 ```{r}
 data(wine, package="rattle.data")
 head(wine)
-df<-scale(wine[-1])
-#this new dataframe contains a standardized dataset 
+df<-scale(wine[-1]) #this new dataframe contains a standardized dataset 
 ```
 
 ```{r}
@@ -129,8 +134,9 @@ ct.km
 library(flexclust)
 randIndex(ct.km)
 ```
-## Example 2 (Seed Data?)
-###Seed Data File
+## Example 2 Seed Data
+
+**Seed Data File**
 
 This dataset contains 7 measurements for geometric properties of 210 kernels from 3 different varieties of wheat.
 
