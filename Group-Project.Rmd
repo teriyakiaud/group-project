@@ -102,6 +102,7 @@ ct.km
 library(flexclust)
 randIndex(ct.km)
 ```
+
 ## Example 2 (Seed Data?)
 ###Seed Data File
 
