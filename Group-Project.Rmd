@@ -71,9 +71,8 @@ https://ac-els-cdn-com.ezproxy.bu.edu/S0920410516300742/1-s2.0-S0920410516300742
 
 **This is the example from the R in Action K-means analysis; please consult the R in Action, 16.4.1 (pages 378-382). **
 
-```{r}
 install.packages("rattle.data") #this package contains the wine dataset 
-```
+
 R in Action asks you to download the rattle package however the wine dataset is no longer in the rattle package
 
 ```{r}
@@ -148,7 +147,7 @@ This dataset contains 7 measurements for geometric properties of 210 kernels fro
 
 ```{r}
 library(curl)
-f <- curl(https://raw.githubusercontent.com/teriyakiaud/group-project/master/tabseeddata.csv)
+f <- curl("https://raw.githubusercontent.com/teriyakiaud/group-project/master/tabseeddata.csv")
 seeddata<-read.csv(file = f, header = TRUE, sep = ",")
 head(seeddata)
 ds<- scale(seeddata[-1])
