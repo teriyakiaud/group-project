@@ -48,7 +48,7 @@ x_{ij} = the value of the jth variable for the ith observation
 \bar{x}_{kj} = the mean of the jth variable for the kth cluster
 p = the number of variables
 
-Each of the cluster analysis methods provide different advantages. K-means is able to handle larger datasets, and observations are not permanently assigned to a specific cluster. However, because the mean is used, all variables must be continuous. If working with categorical data, another method must be used. Additionally, outliers can greatly affect results. K-means also performs poorly with non-convex clusters.
+Each of the cluster analysis methods provide different advantages. K-means is able to handle larger datasets, and observations are not permanently assigned to a specific cluster. However, because the mean is used, all variables must be continuous. If working with categorical data, another method must be used. Additionally, outliers can greatly affect results. K-means also performs poorly with non-convex clusters (for example, a binomial cluster). 
   
 ### Why is this useful?
   (tab content)
@@ -186,3 +186,7 @@ table(nc$Best.n[1, ])
   * The Book of R Chapter 16: Cluster Analysis
 
   * M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, S. Zak, 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24. 
+  
+  *http://stanford.edu/~cpiech/cs221/handouts/kmeans.html
+  
+  *https://cran.r-project.org/web/packages/NbClust/NbClust.pdf
