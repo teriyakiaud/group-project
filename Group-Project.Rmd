@@ -152,7 +152,7 @@ ds<- scale(seeddata[-1])
 ```
 
 ```{r}
-wssplot <- function(data, nc=15, seed=1234){ 
+plot1 <- function(data = ds, nc=15, seed=1234){ 
   wss <- (nrow(data)-1)*sum(apply(data,2,var))
   for (i in 2:nc){
     set.seed(seed)
@@ -163,7 +163,7 @@ wssplot <- function(data, nc=15, seed=1234){
 ```
 
 ```{r}
-wssplot(ds)
+plot1(ds)
 library(NbClust)
 set.seed(1234)
 devAskNewPage(ask=TRUE)
@@ -173,12 +173,12 @@ As in the wine data, we can see a clear decrease in the within group sum of squa
 
 <<<<<<< HEAD
 ```{r}
-nc<-NbClust(df, min.nc=2, max.nc=15, method="kmeans") 
-table(nc$Best.n[1, ])
+nc1<-NbClust(ds, min.nc=2, max.nc=15, method="kmeans") 
+table(nc1$Best.n[1, ])
 ```
 
 ```{r}
-barplot(table(nc$Best.n[1, ]),
+barplot(table(nc1$Best.n[1, ]),
         xlab="Number of Clusters", ylab = "Number of Criteria", 
         main= "Number of Clusters Chosen by 26 Criteria")
 ```
