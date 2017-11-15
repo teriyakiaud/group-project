@@ -137,7 +137,7 @@ This dataset contains 7 measurements for geometric properties of 210 kernels fro
 
 ```{r}
 library(curl)
-f <- curl(https://raw.githubusercontent.com/teriyakiaud/group-project/master/tabseeddata.csv)
+f <- curl("https://raw.githubusercontent.com/teriyakiaud/group-project/master/tabseeddata.csv")
 seeddata<-read.csv(file = f, header = TRUE, sep = ",")
 head(seeddata)
 ds<- scale(seeddata[-1])
