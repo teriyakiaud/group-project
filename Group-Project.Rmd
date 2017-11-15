@@ -44,13 +44,9 @@ To do this, R uses an algorithm that partitions observations into k groups so th
 
 $$ ss(k) = \sum_{i=1}^n \sum_{j=0}^p (x_{ij} - \bar{x}_{kj})^2 $$
 k = cluster
-
-$x_{ij}$ = the value of the jth variable for the ith observation
-
-$\bar{x}_{kj}$ = the mean of the jth variable for the kth cluster
-
+x_{ij} = the value of the jth variable for the ith observation
+\bar{x}_{kj} = the mean of the jth variable for the kth cluster
 p = the number of variables
-
 
 Each of the cluster analysis methods provide different advantages. K-means is able to handle larger datasets, and observations are not permanently assigned to a specific cluster. However, because the mean is used, all variables must be continuous. If working with categorical data, another method must be used. Additionally, outliers can greatly affect results. K-means also performs poorly with non-convex clusters (for example, a binomial cluster). 
   
@@ -114,8 +110,8 @@ table(nc$Best.n[1, ])
 ```
 
 ```{r, eval = FALSE}
-barplot(table(nc$Best.n[1, ])
-        xlab="Number of Clusters", ylab = "Number of Criteria", 
+barplot(table(nc$Best.n[1, ]),
+        xlab= "Number of Clusters", ylab = "Number of Criteria", 
         main= "Number of Clusters Chosen by 26 Criteria")
 #this particular section isn't really working either
 ```
@@ -181,14 +177,14 @@ nc<-NbClust(df, min.nc=2, max.nc=15, method="kmeans")
 table(nc$Best.n[1, ])
 ```
 
-```{r, eval = FALSE}
-barplot(table(nc$Best.n[1, ])
+```{r}
+barplot(table(nc$Best.n[1, ]),
         xlab="Number of Clusters", ylab = "Number of Criteria", 
         main= "Number of Clusters Chosen by 26 Criteria")
 ```
 
 =======
->>>>>>> 21e4c765ceeb58123b203b02ad32d0d226f2aa7f
+
 ## Additional Resources and Useful Links
   * The Book of R Chapter 16: Cluster Analysis
 
