@@ -105,7 +105,7 @@ library(NbClust)
 set.seed(1234)
 devAskNewPage(ask=TRUE)
 ```
-
+The NbClust package allows the user to determine the optimum number of clusters for a particular dataset and provides different clustering schemes. Clusters can be determined for several methods; in this case we are using the kmeans method, however seven other methods are available (including average, median, centroid, etc.). NbClust can also select the best clustering method for a particular dataset if you, for example, want to maximize the difference between hierarchy members. 
 ```{r}
 nc<-NbClust(df, min.nc=2, max.nc=15, method="kmeans") #this is how the number of clusters is determined
 table(nc$Best.n[1, ])
