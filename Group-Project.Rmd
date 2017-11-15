@@ -110,7 +110,7 @@ table(nc$Best.n[1, ])
 ```
 
 ```{r, eval = FALSE}
-barplot(table(nc$Best.n[1,])
+barplot(table(nc$Best.n[1, ])
         xlab="Number of Clusters", ylab = "Number of Criteria", 
         main= "Number of Clusters Chosen by 26 Criteria")
 #this particular section isn't really working either
@@ -138,9 +138,8 @@ randIndex(ct.km)
 **Seed Data File**
 =======
 
-## Example 2 (Seed Data?)
+## Example 2 (Seed Data)
 ###Seed Data File
->>>>>>> 0eaa1f0b3cce381dee5d1ba00340b92974ec25bc
 
 This dataset contains 7 measurements for geometric properties of 210 kernels from 3 different varieties of wheat.
 
@@ -178,6 +177,11 @@ nc<-NbClust(df, min.nc=2, max.nc=15, method="kmeans")
 table(nc$Best.n[1, ])
 ```
 
+```{r}
+barplot(table(nc$Best.n[1, ])
+        xlab="Number of Clusters", ylab = "Number of Criteria", 
+        main= "Number of Clusters Chosen by 26 Criteria")
+```
 
 =======
 >>>>>>> 21e4c765ceeb58123b203b02ad32d0d226f2aa7f
