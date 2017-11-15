@@ -34,12 +34,11 @@ Today we will only focus on k-means clustering.
   
 To understand the k-means algorithm conceptually, our textbook "R in Action" provides us with the following steps:
   
-    1. Select K centroids (K rows chosen at random)
-    2. Assign each data point to its closest centroid
-    3. Recalculate the centroids as the average of all data points in a cluster (that is,
-the centroids are p-length mean vectors, where p is the number of variables).
-    4. Assign data points to their closest centroids.
-    5. Continue steps 3 and 4 until the observations aren’t reassigned or the maximum number of iterations (R uses 10 as a default) is reached.
+1. Select K centroids (K rows chosen at random)
+2. Assign each data point to its closest centroid
+3. Recalculate the centroids as the average of all data points in a cluster (that is, the centroids are p-length mean vectors, where p is the number of variables).
+4. Assign data points to their closest centroids.
+5. Continue steps 3 and 4 until the observations aren’t reassigned or the maximum number of iterations (R uses 10 as a default) is reached.
   
 To do this, R uses an algorithm that partitions observations into k groups so that the sum of squares of the observations to their assigned cluster centers is a minimum. Each observation is assigned to the cluster with the smallest value of:
 
@@ -49,7 +48,7 @@ x_{ij} = the value of the jth variable for the ith observation
 \bar{x}_{kj} = the mean of the jth variable for the kth cluster
 p = the number of variables
 
-Each of the cluster analysis methods provide different advantages. K-means is able to handle larger datasets, and observations are not permanently assigned to a specific cluster. However, because the mean is used, all variables must be continuous. If working with categorical data, another method must be used. Additionally, outliers can greatly affect results. K-means also performs poorly with non-convex clusters.
+Each of the cluster analysis methods provide different advantages. K-means is able to handle larger datasets, and observations are not permanently assigned to a specific cluster. However, because the mean is used, all variables must be continuous. If working with categorical data, another method must be used. Additionally, outliers can greatly affect results. K-means also performs poorly with non-convex clusters (for example, a binomial cluster). 
   
 ### Why is this useful?
   (tab content)
@@ -104,7 +103,7 @@ library(NbClust)
 set.seed(1234)
 devAskNewPage(ask=TRUE)
 ```
-
+The NbClust package allows the user to determine the optimum number of clusters for a particular dataset and provides different clustering schemes. Clusters can be determined for several methods; in this case we are using the kmeans method, however seven other methods are available (including average, median, centroid, etc.). NbClust can also select the best clustering method for a particular dataset if you, for example, want to maximize the difference between hierarchy members. 
 ```{r}
 nc<-NbClust(df, min.nc=2, max.nc=15, method="kmeans") #this is how the number of clusters is determined
 table(nc$Best.n[1, ])
@@ -186,3 +185,7 @@ table(nc$Best.n[1, ])
   * The Book of R Chapter 16: Cluster Analysis
 
   * M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, S. Zak, 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24. 
+  
+  *http://stanford.edu/~cpiech/cs221/handouts/kmeans.html
+  
+  *https://cran.r-project.org/web/packages/NbClust/NbClust.pdf
