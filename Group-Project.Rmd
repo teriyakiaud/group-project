@@ -44,9 +44,13 @@ To do this, R uses an algorithm that partitions observations into k groups so th
 
 $$ ss(k) = \sum_{i=1}^n \sum_{j=0}^p (x_{ij} - \bar{x}_{kj})^2 $$
 k = cluster
-x_{ij} = the value of the jth variable for the ith observation
-\bar{x}_{kj} = the mean of the jth variable for the kth cluster
+
+$x_{ij}$ = the value of the jth variable for the ith observation
+
+$\bar{x}_{kj}$ = the mean of the jth variable for the kth cluster
+
 p = the number of variables
+
 
 Each of the cluster analysis methods provide different advantages. K-means is able to handle larger datasets, and observations are not permanently assigned to a specific cluster. However, because the mean is used, all variables must be continuous. If working with categorical data, another method must be used. Additionally, outliers can greatly affect results. K-means also performs poorly with non-convex clusters (for example, a binomial cluster). 
   
