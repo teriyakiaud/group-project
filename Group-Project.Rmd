@@ -181,7 +181,7 @@ nc<-NbClust(df, min.nc=2, max.nc=15, method="kmeans")
 table(nc$Best.n[1, ])
 ```
 
-```{r}
+```{r, eval = FALSE}
 barplot(table(nc$Best.n[1, ])
         xlab="Number of Clusters", ylab = "Number of Criteria", 
         main= "Number of Clusters Chosen by 26 Criteria")
