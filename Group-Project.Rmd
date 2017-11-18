@@ -32,7 +32,7 @@ Two popular clustering approaches are **hierarchical agglomerative clustering** 
 Today we will only focus on k-means clustering.  
   
 ### K-means Clustering
-![](https://i.pinimg.com/originals/27/9b/b3/279bb30fcaa7350b401f0a931a4e1b23.jpg)
+![](http://www.turingfinance.com/wp-content/uploads/2015/02/K-Means-Clustering-Gif.gif)
   
 To understand the k-means algorithm conceptually, our textbook "R in Action" provides us with the following steps:
   
