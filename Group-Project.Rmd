@@ -73,6 +73,7 @@ Huaijie Yang, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, Bo Guo. 2016
   * add to this at the end
   
 ## Example 1 (Wine Data using R in Action)
+![](https://media.giphy.com/media/3SB4hYwiSpIkw/giphy.gif)
 
 **This is the example from the R in Action K-means analysis; please consult the R in Action, 16.4.1 (pages 378-382). **
 
