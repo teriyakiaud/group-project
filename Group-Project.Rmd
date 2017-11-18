@@ -8,7 +8,6 @@ output:
 ---
 
 # Cluster Analysis
-
 ## Preliminaries
 
 * Install these packages in R: {rattle.data}, {NbClust}, {flexclust}, {curl}
@@ -33,6 +32,7 @@ Two popular clustering approaches are **hierarchical agglomerative clustering** 
 Today we will only focus on k-means clustering.  
   
 ### K-means Clustering
+![](https://i.pinimg.com/originals/27/9b/b3/279bb30fcaa7350b401f0a931a4e1b23.jpg)
   
 To understand the k-means algorithm conceptually, our textbook "R in Action" provides us with the following steps:
   
@@ -141,6 +141,7 @@ randIndex(ct.km)
 ```
 <<<<<<< HEAD
 ## Example 2 Seed Data
+![](https://i.imgur.com/cuW8K7N.gif)
 
 **Seed Data File**
 =======
