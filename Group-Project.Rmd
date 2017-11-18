@@ -22,6 +22,8 @@ In this module we will learn about k-means clustering, the pros and cons of this
 
 Cluster analysis uncovers subgroups of observations within a dataset by reducing a large number of observations to a smaller number of **clusters**. A cluster is a group of observations that are more similar to each other than they are to the observations in other groups. 
 
+There are three main issues with cluster analysis: (1) there are essentially an infinite number of ways the data can be clustered, (2) there is no accepted theoretical framework about how to perform cluster analyis, (3) and there is no strict definition of what a cluster is (the users define what a cluster means for their specific situation). This means that users should know what they want to understand from their data and then choose the approprite type of cluster analysis to answer those specific questions. 
+
 Two popular clustering approaches are **hierarchical agglomerative clustering** and **partitioning clustering**. 
 
   1. Hierarchical agglomerative clustering begins with each observation as a cluster. Clusters are then combines until they all merge into a single cluster. Common algorithms include single linkage, complete linkage, average linkage, centroid, and Ward's method.
@@ -59,7 +61,7 @@ Cluster analysis is commonly used in the biolgical and behavioral sciences, mark
   
 Check out some of these examples:
   
-https://ac-els-cdn-com.ezproxy.bu.edu/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=1212e7cc-c582-11e7-afd1-00000aab0f27&acdnat=1510254990_e2794bdbec581af54de5c11ea7d5f23d
+Huaijie Yang, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, Bo Guo. 2016. Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9. 
   
 
 
@@ -190,6 +192,6 @@ barplot(table(nc1$Best.n[1, ]),
 
   * M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, S. Zak, 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24. 
   
-  *http://stanford.edu/~cpiech/cs221/handouts/kmeans.html
-  
   *https://cran.r-project.org/web/packages/NbClust/NbClust.pdf
+  
+  * Wu, Junjie. *Advances in K-means clustering a data mining thinking.* Springer, New York 2012. 
