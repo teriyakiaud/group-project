@@ -50,10 +50,14 @@ x_{ij} = the value of the jth variable for the ith observation
 \bar{x}_{kj} = the mean of the jth variable for the kth cluster
 p = the number of variables
 
-Each of the cluster analysis methods provide different advantages. K-means is able to handle larger datasets, and observations are not permanently assigned to a specific cluster. However, because the mean is used, all variables must be continuous. If working with categorical data, another method must be used. Additionally, outliers can greatly affect results. K-means also performs poorly with non-convex clusters (for example, a binomial cluster). 
+####Pros
+K-means analysis is efficient, simple, robust, and can be adapted to data with complex properties, high dimentionality, and class imbalance. It can also handle larger datasets than other clustering techniques, and observations  are not permanently assigned to a specific cluster. 
+ 
+ ####Cons
+Variables for K-means must be continuous; if you are working with categorical data, another method must be used. Additionally, outliers can greatly affect results. K-means also performs poorly with convex clusters (for example, a binomial cluster), and with non-globular clusters. The results of K-means is a set of clusters which are generally uniform in size even if the original data had clusters of different sizes. 
   
 ### Why is this useful?
-  (tab content)
+  K-means is a simple, efficient, and widely accepted method to partion data into meaningful groups; K-means is used as a benchmark to test newly created clustering techniques. 
   
 ### Recent Research and Applications
 
