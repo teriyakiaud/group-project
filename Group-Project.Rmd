@@ -190,11 +190,20 @@ barplot(table(nc1$Best.n[1, ]),
         xlab="Number of Clusters", ylab = "Number of Criteria", 
         main= "Number of Clusters Chosen by 26 Criteria")
 ```
+<<<<<<< HEAD
+```{r}
+set.seed(1234)
+fit.km1<-kmeans(ds, 3, nstart=25)
+fit.km1$size
+fit.km1$centers
+```
+=======
 
 ```{r}
 library(knitr)
 ```
 
+>>>>>>> a06f47aa36b926147f4015312676b203e9daaa88
 =======
 
 ## Additional Resources and Useful Links
