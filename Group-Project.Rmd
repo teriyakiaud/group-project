@@ -65,7 +65,7 @@ Cluster analysis is commonly used in the biolgical and behavioral sciences, mark
   
 Check out some of these examples:
   
-Huaijie Yang, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, Bo Guo. 2016. Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9. 
+[Huaijie Yang, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, Bo Guo. 2016. Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9.](https://www.sciencedirect.com/science/article/pii/S0920410516300742)
   
 
 
@@ -191,13 +191,17 @@ barplot(table(nc1$Best.n[1, ]),
         main= "Number of Clusters Chosen by 26 Criteria")
 ```
 
+```{r}
+library(knitr)
+```
+
 =======
 
 ## Additional Resources and Useful Links
   * The Book of R Chapter 16: Cluster Analysis
 
-  * M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, S. Zak, 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24. 
+  * [M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, S. Zak, 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24.](https://www.researchgate.net/publication/234073581_Seeds_dataset) 
   
   *https://cran.r-project.org/web/packages/NbClust/NbClust.pdf
   
-  * Wu, Junjie. *Advances in K-means clustering a data mining thinking.* Springer, New York 2012. 
+  * [Wu, Junjie. *Advances in K-means clustering a data mining thinking.* Springer, New York 2012.](https://link.springer.com/book/10.1007%2F978-3-642-29807-3) 
