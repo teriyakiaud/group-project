@@ -8,7 +8,6 @@ output:
 ---
 
 # Cluster Analysis
-
 ## Preliminaries
 
 * Install these packages in R: {rattle.data}, {NbClust}, {flexclust}, {curl}
@@ -22,6 +21,8 @@ In this module we will learn about k-means clustering, the pros and cons of this
 
 Cluster analysis uncovers subgroups of observations within a dataset by reducing a large number of observations to a smaller number of **clusters**. A cluster is a group of observations that are more similar to each other than they are to the observations in other groups. 
 
+There are three main issues with cluster analysis: (1) there are essentially an infinite number of ways the data can be clustered, (2) there is no accepted theoretical framework about how to perform cluster analyis, (3) and there is no strict definition of what a cluster is (the users define what a cluster means for their specific situation). This means that users should know what they want to understand from their data and then choose the approprite type of cluster analysis to answer those specific questions. 
+
 Two popular clustering approaches are **hierarchical agglomerative clustering** and **partitioning clustering**. 
 
   1. Hierarchical agglomerative clustering begins with each observation as a cluster. Clusters are then combines until they all merge into a single cluster. Common algorithms include single linkage, complete linkage, average linkage, centroid, and Ward's method.
@@ -31,6 +32,7 @@ Two popular clustering approaches are **hierarchical agglomerative clustering** 
 Today we will only focus on k-means clustering.  
   
 ### K-means Clustering
+![](http://www.turingfinance.com/wp-content/uploads/2015/02/K-Means-Clustering-Gif.gif)
   
 To understand the k-means algorithm conceptually, our textbook "R in Action" provides us with the following steps:
   
@@ -48,10 +50,14 @@ x_{ij} = the value of the jth variable for the ith observation
 \bar{x}_{kj} = the mean of the jth variable for the kth cluster
 p = the number of variables
 
-Each of the cluster analysis methods provide different advantages. K-means is able to handle larger datasets, and observations are not permanently assigned to a specific cluster. However, because the mean is used, all variables must be continuous. If working with categorical data, another method must be used. Additionally, outliers can greatly affect results. K-means also performs poorly with non-convex clusters (for example, a binomial cluster). 
+####Pros
+K-means analysis is efficient, simple, robust, and can be adapted to data with complex properties, high dimentionality, and class imbalance. It can also handle larger datasets than other clustering techniques, and observations  are not permanently assigned to a specific cluster. 
+ 
+ ####Cons
+Variables for K-means must be continuous; if you are working with categorical data, another method must be used. Additionally, outliers can greatly affect results. K-means also performs poorly with convex clusters (for example, a binomial cluster), and with non-globular clusters. The results of K-means is a set of clusters which are generally uniform in size even if the original data had clusters of different sizes. 
   
 ### Why is this useful?
-  (tab content)
+  K-means is a simple, efficient, and widely accepted method to partion data into meaningful groups; K-means is used as a benchmark to test newly created clustering techniques. 
   
 ### Recent Research and Applications
 
@@ -59,7 +65,7 @@ Cluster analysis is commonly used in the biolgical and behavioral sciences, mark
   
 Check out some of these examples:
   
-https://ac-els-cdn-com.ezproxy.bu.edu/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=1212e7cc-c582-11e7-afd1-00000aab0f27&acdnat=1510254990_e2794bdbec581af54de5c11ea7d5f23d
+[Huaijie Yang, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, Bo Guo. 2016. Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9.](https://www.sciencedirect.com/science/article/pii/S0920410516300742)
   
 
 
@@ -67,6 +73,7 @@ https://ac-els-cdn-com.ezproxy.bu.edu/S0920410516300742/1-s2.0-S0920410516300742
   * add to this at the end
   
 ## Example 1 (Wine Data using R in Action)
+![](https://media.giphy.com/media/3SB4hYwiSpIkw/giphy.gif)
 
 **This is the example from the R in Action K-means analysis; please consult the R in Action, 16.4.1 (pages 378-382). **
 
@@ -134,6 +141,7 @@ randIndex(ct.km)
 ```
 <<<<<<< HEAD
 ## Example 2 Seed Data
+![](https://i.imgur.com/cuW8K7N.gif)
 
 **Seed Data File**
 =======
@@ -182,6 +190,7 @@ barplot(table(nc1$Best.n[1, ]),
         xlab="Number of Clusters", ylab = "Number of Criteria", 
         main= "Number of Clusters Chosen by 26 Criteria")
 ```
+<<<<<<< HEAD
 ```{r}
 set.seed(1234)
 fit.km1<-kmeans(ds, 3, nstart=25)
@@ -190,11 +199,18 @@ fit.km1$centers
 ```
 =======
 
+```{r}
+library(knitr)
+```
+
+>>>>>>> a06f47aa36b926147f4015312676b203e9daaa88
+=======
+
 ## Additional Resources and Useful Links
   * The Book of R Chapter 16: Cluster Analysis
 
-  * M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, S. Zak, 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24. 
-  
-  *http://stanford.edu/~cpiech/cs221/handouts/kmeans.html
+  * [M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, S. Zak, 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24.](https://www.researchgate.net/publication/234073581_Seeds_dataset) 
   
   *https://cran.r-project.org/web/packages/NbClust/NbClust.pdf
+  
+  * [Wu, Junjie. *Advances in K-means clustering a data mining thinking.* Springer, New York 2012.](https://link.springer.com/book/10.1007%2F978-3-642-29807-3) 
