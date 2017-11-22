@@ -61,12 +61,17 @@ Variables for K-means must be continuous; if you are working with categorical da
   
 ### Recent Research and Applications
 
-Cluster analysis is commonly used in the biolgical and behavioral sciences, marketing, and medical research. 
-  
+Cluster analysis is commonly used in the biological and behavioral sciences, marketing, archaeology, and medical research.
+
 Check out some of these examples:
   
-[Huaijie Yang, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, Bo Guo. 2016. Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9.](https://www.sciencedirect.com/science/article/pii/S0920410516300742)
-  
+[Yang, Huaijie, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, and Bo Guo. 2016. Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9.](https://ac.els-cdn.com/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=373203c8-cfd5-11e7-aa36-00000aacb35e&acdnat=1511390220_af008af7a4aad067a2555a4680bba341)
+
+
+[Argote-Espino, Denisse, Jesús Solé, Pedro López-García, and Osvaldo Sterpone. 2013. Geochemical characterisation of Otumba obsidian sub-sources (Central Mexico) by inductively coupled plasma mass spectrometry and density-based spatial clustering of applications with noise statistical analysis. Open Journal of Archaeology, 1(18): 85-88.](http://www.pagepress.org/journals/index.php/arc/article/view/arc.2013.e18/4167)
+
+Argote-Espino et al (2013) seeks to better understand the economic and political expansion of influential Mesoamerican cultures in relation to the control of obsidian sources and their and trade routes. They measured the chemical composition of four sources or obsidian in the Otumba’s region. They then measured the makeup of obsidian artifacts found through this region. Due to obsidian sources compositions being relatively homogeneous yet different sources’ compositions varying greatly, Argote-Espino et al (2013) were able to perform a cluster analysis on this area showing which source of obsidian was most used for tool production. This is just one way k-means is being used in archaeology.
+
 
 
 ## Useful Skills You'll Learn Today
@@ -203,14 +208,20 @@ fit.km1$centers
 library(knitr)
 ```
 
->>>>>>> a06f47aa36b926147f4015312676b203e9daaa88
+>>>>>>> a06f47aa36b926147f4015312676b203e9daaa88 why is this here?
 =======
 
 ## Additional Resources and Useful Links
   * The Book of R Chapter 16: Cluster Analysis
+  
+  * [Argote-Espino, Denisse, Jesús Solé, Pedro López-García, and Osvaldo Sterpone. 2013. Geochemical characterisation of Otumba obsidian sub-sources (Central Mexico) by inductively coupled plasma mass spectrometry and density-based spatial clustering of applications with noise statistical analysis. Open Journal of Archaeology, 1(18): 85-88.](http://www.pagepress.org/journals/index.php/arc/article/view/arc.2013.e18/4167)
 
   * [M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, S. Zak, 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24.](https://www.researchgate.net/publication/234073581_Seeds_dataset) 
   
   *https://cran.r-project.org/web/packages/NbClust/NbClust.pdf
   
-  * [Wu, Junjie. *Advances in K-means clustering a data mining thinking.* Springer, New York 2012.](https://link.springer.com/book/10.1007%2F978-3-642-29807-3) 
+  * [Wu, Junjie, 2012. Advances in K-means Clustering: A Data Mining Thinking. PhD dissertation, 
+Department of Information Systems, Tsinghua University, Beijing, China](https://link.springer.com/book/10.1007%2F978-3-642-29807-3)
+  
+  * [Yang, Huaijie, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, and Bo Guo. 2016. Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9.](https://ac.els-cdn.com/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=373203c8-cfd5-11e7-aa36-00000aacb35e&acdnat=1511390220_af008af7a4aad067a2555a4680bba341)
+
