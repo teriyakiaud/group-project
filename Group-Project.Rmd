@@ -68,22 +68,21 @@ Cluster analysis is commonly used in the biological and behavioral sciences, mar
 Check out some of these examples:
 <<<<<<< HEAD
   
-[Yang, Huaijie, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, and Bo Guo. 2016. Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9.](https://ac.els-cdn.com/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=373203c8-cfd5-11e7-aa36-00000aacb35e&acdnat=1511390220_af008af7a4aad067a2555a4680bba341)
+[Yang, Huaijie, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, and Bo Guo. (2016). Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9.](https://ac.els-cdn.com/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=373203c8-cfd5-11e7-aa36-00000aacb35e&acdnat=1511390220_af008af7a4aad067a2555a4680bba341)
 
 Yang et al. (2016) used synergetic wavelet transform and K-means clustering to identify types of metamorphic rocks from the Chinese Continental Scientific Drilling Main Hole near the village of Maobei, China. They performed multiple wave functions on previously document well logs, a detailed record of the geological changes and characteristics of a stratigraphy. Yang et al. (2016) then used a K-means clustering algorithm to group the observed metamorphic rock into five categories: orthogneiss, amphibolites, eclogite, paragneiss, and ultramafic, the five most common metamorphic rock at this site. Next, Yang et al. (2016) analyzed the accuracy of identifying each type of metamorphic rock by comparing the results of the K-means analysis to the well logs. They reported accuracies ranging from 94.51% to 70.58%. They conclude their article by suggesting that through the use of synergetic wavelet transform and K-means clustering, the accuracy of identifying metamorphic rocks increases, and the time spent computing this data decreases. 
 
 =======
->>>>>>> fb88040c85756ab8ac98f44b968d4a59af2ced5e
 
-[Argote-Espino, Denisse, Jesús Solé, Pedro López-García, and Osvaldo Sterpone. 2013. Geochemical characterisation of Otumba obsidian sub-sources (Central Mexico) by inductively coupled plasma mass spectrometry and density-based spatial clustering of applications with noise statistical analysis. Open Journal of Archaeology, 1(18): 85-88.](http://www.pagepress.org/journals/index.php/arc/article/view/arc.2013.e18/4167)
+[Argote-Espino, Denisse, Jesús Solé, Pedro López-García, and Osvaldo Sterpone. (2013). Geochemical characterisation of Otumba obsidian sub-sources (Central Mexico) by inductively coupled plasma mass spectrometry and density-based spatial clustering of applications with noise statistical analysis. Open Journal of Archaeology, 1(18): 85-88.](http://www.pagepress.org/journals/index.php/arc/article/view/arc.2013.e18/4167)
 
 Argote-Espino et al (2013) seeks to better understand the economic and political expansion of influential Mesoamerican cultures in relation to the control of obsidian sources and their and trade routes. They measured the chemical composition of four sources or obsidian in the Otumba’s region. They then measured the makeup of obsidian artifacts found through this region. Due to obsidian sources compositions being relatively homogeneous yet different sources’ compositions varying greatly, Argote-Espino et al (2013) were able to perform a cluster analysis on this area showing which source of obsidian was most used for tool production. This is just one way k-means is being used in archaeology.
 
-[Yang, Huaijie, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, and Bo Guo. 2016. Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9.](https://ac.els-cdn.com/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=373203c8-cfd5-11e7-aa36-00000aacb35e&acdnat=1511390220_af008af7a4aad067a2555a4680bba341)
+=======
 
 [Punj, G., & Stewart, D. (1983). Cluster Analysis in Marketing Research: Review and Suggestions for Application. Journal of Marketing Research, 20(2), 134-148. doi:10.2307/3151680](http://www.jstor.org/stable/3151680?seq=1#page_scan_tab_contents)
 
-[Pablo Tamayo, Donna Slonim, Jill Mesirov, Qing Zhu, Sutisak Kitareewan, Ethan Dmitrovsky, Eric S. Lander, and Todd R. Golub. Interpreting patterns of gene expression with self-organizing maps: Methods and application to hematopoietic differentiation. PNAS 1999 96 (6) 2907-2912; doi:10.1073/pnas.96.6.2907](http://www.pnas.org/content/96/6/2907.full.pdf)
+[Tamayo,Pablo, Donna Slonim, Jill Mesirov, Qing Zhu, Sutisak Kitareewan, Ethan Dmitrovsky, Eric S. Lander, and Todd R. Golub. (1998). Interpreting patterns of gene expression with self-organizing maps: Methods and application to hematopoietic differentiation. PNAS 1999 96 (6) 2907-2912; doi:10.1073/pnas.96.6.2907](http://www.pnas.org/content/96/6/2907.full.pdf)
 
 [Johnson, A., & Johnson, A. (1975). K-Means and Temporal Variability in Kansas City Hopewell Ceramics. American Antiquity, 40(3), 283-295. doi:10.2307/279690](https://www.cambridge.org/core/journals/american-antiquity/article/div-classtitlespan-classitalickspan-means-and-temporal-variability-in-kansas-city-hopewell-ceramicsdiv/659CD81F64D6ED29DB73C185729177A5)
 
@@ -219,9 +218,9 @@ library(knitr)
   
   * The Book of R Chapter 16: Cluster Analysis
   
-    * [Wu, Junjie, 2012. Advances in K-means Clustering: A Data Mining Thinking. PhD dissertation, Department of Information Systems, Tsinghua University, Beijing, China](https://link.springer.com/book/10.1007%2F978-3-642-29807-3)
+  * [Wu, Junjie. (2012). Advances in K-means Clustering: A Data Mining Thinking. PhD dissertation, Department of Information Systems, Tsinghua University, Beijing, China](https://link.springer.com/book/10.1007%2F978-3-642-29807-3)
 
-  * [M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, S. Zak, 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24.](https://www.researchgate.net/publication/234073581_Seeds_dataset) 
+  * [M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, and S. Zak. (2012). 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24.](https://www.researchgate.net/publication/234073581_Seeds_dataset) 
   
 
 
