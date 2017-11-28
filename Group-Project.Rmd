@@ -177,8 +177,10 @@ randIndex(ct.km)
 ```
 Our wine data has nearly 0.9 agreement between the wine varietal type and the cluster solution!
 
-We can also create a 2D representation of the cluster solution in order to visually interpret our results. 
+If our agreement had not been as high, we would want to use a different clustering method.
 
+
+We can also create a 2D representation of the cluster solution in order to visually interpret our results. 
 ```{r}
 fit.km$cluster # these are each of the clusters
 ```
@@ -193,8 +195,9 @@ clusplot(df, fit.km$cluster, main='2D Representation of the Cluster Solution',
 ### Obtaining the Seed Data File
 ![](https://i.imgur.com/cuW8K7N.gif)
 
-This dataset contains 7 measurements for geometric properties of 210 kernels from 3 different varieties of wheat. This dataset is publicly available, though we will download it from our github repository as we have already converted it into a csv file.
+Our next example uses a seed dataset. This dataset contains 7 measurements for geometric properties of 210 kernels from 3 different varieties of wheat. This dataset is publicly available, though we will download it from our github repository as we have already converted it into a csv file.
 
+First, we will create a standardized dataframe. 
 ```{r}
 library(curl)
 f <- curl("https://raw.githubusercontent.com/teriyakiaud/group-project/master/tabseeddata.csv")
@@ -203,6 +206,7 @@ head(seeddata)
 ds<- scale(seeddata[-1])
 ```
 
+Just as we did in the first example, we need to figure out how many clusters to use.
 ```{r}
 plot1 <- function(data = ds, nc=15, seed=1234){ 
   wss <- (nrow(data)-1)*sum(apply(data,2,var))
@@ -221,32 +225,49 @@ set.seed(1234)
 devAskNewPage(ask=TRUE)
 ```
 
-As in the wine dataset, we can see a clear decrease in the within group sum of squares between 1, 2, and 3 clusters and then a smaller decrease after. This suggests that 3 is an appropriate number of clusters. The figure also shows that there will most likely not be more than 15 clusters.
+As in the wine dataset, we can see a clear decrease in the within group sum of squares between 1, 2, and 3 clusters and then a smaller decrease after. This suggests that 3 is an appropriate number of clusters to use. The figure also shows that there will most likely not be more than 15 clusters.
 
+We can also use NbClust to determine the optimum number of clusters.
 ```{r}
 nc1<-NbClust(ds, min.nc=2, max.nc=15, method="kmeans") 
 table(nc1$Best.n[1, ])
 ```
+
 
 ```{r}
 barplot(table(nc1$Best.n[1, ]),
         xlab="Number of Clusters", ylab = "Number of Criteria", 
         main= "Number of Clusters Chosen by 26 Criteria")
 ```
+We can see that 20 of the indices proposed 3 as the best number of clusters. According to the majority rule, we should use 3 clusters.
 
 ```{r}
 set.seed(1234)
-fit.kmseed<-kmeans(ds, 3, nstart=25)
+fit.kmseed<-kmeans(ds, 3, nstart=25) # performs the k-means cluster analysis
 fit.kmseed$size
 fit.kmseed$centers
 ```
 
 ```{r}
+# cross-tabulation of type and cluster membership:
 ct.kmseed<-table(seeddata$Variety, fit.kmseed$cluster)
 ct.kmseed
 
+# using an adjusted Rand index to quantify the agreement
 library(flexclust)
 randIndex(ct.kmseed)
+```
+Here, we see that our seed data has a 0.96 agreement!
+
+Finally, let's create a 2D representation of the cluster solution.
+```{r}
+fit.kmseed$cluster # these are each of the clusters
+```
+
+```{r}
+library(cluster)
+clusplot(ds, fit.kmseed$cluster, main='2D Representation of the Cluster Solution',
+         color=TRUE, shade=TRUE, plotchar = TRUE, labels=2, lines=0)
 ```
 
 ## Additional Resources and Useful Links
