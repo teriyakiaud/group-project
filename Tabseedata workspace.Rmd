@@ -1,9 +1,0 @@
----
-title: "tabseed"
-output: html_document
----
-
-```{r}
-mydata<-read.csv(file = "tabseeddata.csv", header = TRUE, sep = ",")
-mydata
-```
