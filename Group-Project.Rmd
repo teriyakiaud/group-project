@@ -10,7 +10,7 @@ output:
 # Cluster Analysis
 ## Preliminaries
 
-* Install the following packages in R: [{rattle.data}](https://cran.r-project.org/web/packages/rattle.data/rattle.data.pdf), [{NbClust}](https://cran.r-project.org/web/packages/NbClust/NbClust.pdf), [{flexclust}](https://cran.r-project.org/web/packages/flexclust/flexclust.pdf), [{curl}](https://cran.r-project.org/web/packages/curl/curl.pdf) [{cluster}] (https://cran.r-project.org/web/packages/cluster/index.html)
+* Install the following packages in R: [{rattle.data}](https://cran.r-project.org/web/packages/rattle.data/rattle.data.pdf), [{NbClust}](https://cran.r-project.org/web/packages/NbClust/NbClust.pdf), [{flexclust}](https://cran.r-project.org/web/packages/flexclust/flexclust.pdf), [{curl}](https://cran.r-project.org/web/packages/curl/curl.pdf), [{cluster}](https://cran.r-project.org/web/packages/cluster/index.html)
 
 ## Objectives
 In this module we will learn about cluster analysis, specifically k-means clustering. We will discuss the pros and cons of this method, and why its application is useful. We will work through two examples to understand how k-means works.
@@ -65,7 +65,6 @@ K-means is a simple, efficient, and widely accepted method to partion data into 
 
 K-means clustering analysis is a common way to group and interpret large sets of data regardless of the distribution. Here are three ways in which how researchers used k-means to analyze and interpret data.  
 
-
 [Yang, Huaijie, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, and Bo Guo. (2016). Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9.](https://ac.els-cdn.com/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=373203c8-cfd5-11e7-aa36-00000aacb35e&acdnat=1511390220_af008af7a4aad067a2555a4680bba341)
 
 Yang et al. (2016) used synergetic wavelet transform and K-means clustering to identify types of metamorphic rocks from the Chinese Continental Scientific Drilling Main Hole near the village of Maobei, China. They performed multiple wave functions on previously document well logs, a detailed record of the geological changes and characteristics of a stratigraphy. Yang et al. (2016) then used a K-means clustering algorithm to group the observed metamorphic rock into five categories: orthogneiss, amphibolites, eclogite, paragneiss, and ultramafic, the five most common metamorphic rock at this site. Next, Yang et al. (2016) analyzed the accuracy of identifying each type of metamorphic rock by comparing the results of the K-means analysis to the well logs. They reported accuracies ranging from 94.51% to 70.58%. They conclude their article by suggesting that through the use of synergetic wavelet transform and K-means clustering, the accuracy of identifying metamorphic rocks increases, and the time spent computing this data decreases. 
@@ -96,9 +95,9 @@ These are just some of the examples in how K-means cluster analysis is used in a
 
 **This is the example from the *R in Action* K-means analysis. Please consult 16.4.1 (pages 378-382) in the book for further information. **
 
-R in Action asks you to download the rattle package, however the dataset we want is no longer in the rattle package. We have downloaded rattle.data instead.
+For the first example we will be using the wine dataset. This dataset contains the results of a chemical analysis of wines grown in a specific area of Italy. Three types of wine are represented in the 178 samples, with the results of 13 chemical analyses recorded for each sample. 
 
-We will be using the wine dataset. This dataset contains the results of a chemical analysis of wines grown in a specific area of Italy. Three types of wine are represented in the 178 samples, with the results of 13 chemical analyses recorded for each sample. 
+R in Action asks you to download the rattle package, however the dataset we want is no longer in the rattle package. We have downloaded rattle.data instead.
 
 ```{r}
 library(rattle.data)
