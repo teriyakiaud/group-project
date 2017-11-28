@@ -1,5 +1,5 @@
 ---
-title: "Cluster Analysis"
+title: "K-Means Analysis"
 authors: Aarti Arora, Andrew Mark, Natalie Robinson, Audrey Tjahjadi
 output: 
   html_document: 
