@@ -60,19 +60,24 @@ Additionally, variables for K-means must be continuous; if you are working with 
   
 ### Why is this useful?
 K-means is a simple, efficient, and widely accepted method to partion data into meaningful groups; K-means is used as a benchmark to test newly created clustering techniques. 
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Iris_Flowers_Clustering_kMeans.svg/450px-Iris_Flowers_Clustering_kMeans.svg.png)
   
 ### Recent Research and Applications
 
 K-means clustering analysis is a common way to group and interpret large sets of data regardless of the distribution. Here are three ways in which how researchers used k-means to analyze and interpret data.  
 
+**Example 1**
 [Yang, Huaijie, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, and Bo Guo. (2016). Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9.](https://ac.els-cdn.com/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=373203c8-cfd5-11e7-aa36-00000aacb35e&acdnat=1511390220_af008af7a4aad067a2555a4680bba341)
 
 Yang et al. (2016) used synergetic wavelet transform and K-means clustering to identify types of metamorphic rocks from the Chinese Continental Scientific Drilling Main Hole near the village of Maobei, China. They performed multiple wave functions on previously document well logs, a detailed record of the geological changes and characteristics of a stratigraphy. Yang et al. (2016) then used a K-means clustering algorithm to group the observed metamorphic rock into five categories: orthogneiss, amphibolites, eclogite, paragneiss, and ultramafic, the five most common metamorphic rock at this site. Next, Yang et al. (2016) analyzed the accuracy of identifying each type of metamorphic rock by comparing the results of the K-means analysis to the well logs. They reported accuracies ranging from 94.51% to 70.58%. They conclude their article by suggesting that through the use of synergetic wavelet transform and K-means clustering, the accuracy of identifying metamorphic rocks increases, and the time spent computing this data decreases. 
 
+**Example 2**
 [Argote-Espino, Denisse, Jesús Solé, Pedro López-García, and Osvaldo Sterpone. (2013). Geochemical characterisation of Otumba obsidian sub-sources (Central Mexico) by inductively coupled plasma mass spectrometry and density-based spatial clustering of applications with noise statistical analysis. Open Journal of Archaeology, 1(18): 85-88.](http://www.pagepress.org/journals/index.php/arc/article/view/arc.2013.e18/4167)
 
 Argote-Espino et al (2013) seeks to better understand the economic and political expansion of influential Mesoamerican cultures in relation to the control of obsidian sources and their and trade routes. They measured the chemical composition of four sources or obsidian in the Otumba’s region. They then measured the makeup of obsidian artifacts found through this region. Due to obsidian sources compositions being relatively homogeneous yet different sources’ compositions varying greatly, Argote-Espino et al (2013) were able to perform a cluster analysis on this area showing which source of obsidian was most used for tool production. This is just one way k-means is being used in archaeology.
 
+**Example 3**
 [Johnson, A., & Johnson, A. (1975). K-Means and Temporal Variability in Kansas City Hopewell Ceramics. American Antiquity, 40(3), 283-295.](https://www.cambridge.org/core/journals/american-antiquity/article/div-classtitlespan-classitalickspan-means-and-temporal-variability-in-kansas-city-hopewell-ceramicsdiv/659CD81F64D6ED29DB73C185729177A5)
 
 Johnson and Johnson (1975) seek to create a chronology for the Hopewell culture located near Kansas City, Missouri. To do this they looked at four site all within a twenty mile radius of the Missouri River Valley located north of Kansas City. From there they used K-means analysis to observe 863 ceramic rims, and cluster them into groups based on the characteristics of the rims. Johnson and Johnson (1975) then compared these clusters with previously excavated ceramic rim in association with radiocarbon dates. They found a relationship between radiocarbon dates and the clusters and concluded that their K-means analysis can be used to create a chronology of the area.
@@ -101,11 +106,17 @@ R in Action asks you to download the rattle package, however the dataset we want
 library(rattle.data)
 ```
 
+First, we create a standardized dataframe.
 ```{r}
 data(wine, package="rattle.data")
 head(wine)
-df<-scale(wine[-1]) #this new dataframe contains a standardized dataset 
 ```
+
+```{r}
+df <- scale(wine[-1]) #this new dataframe contains a standardized dataset 
+```
+
+Next, we need to determine the number of clusters we want.
 
 ```{r}
 wssplot <- function(data, nc=15, seed=1234){ #where data is the dataset, nc is the maximum number of clusters to consider, and seed is the randomly generated dataset
@@ -140,36 +151,42 @@ barplot(table(nc$Best.n[1, ]),
         xlab= "Number of Clusters", ylab = "Number of Criteria", 
         main= "Number of Clusters Chosen by 26 Criteria")
 ```
+This figure shows the reccommended number of clusters (3) using 26 criteria provided by the NbClust package.
 
 ```{r}
 set.seed(1234)
-fit.km<-kmeans(df, 3, nstart=25)
-fit.km$size
-#this is the k means clusters analysis 
-fit.km$centers
+fit.km<-kmeans(df, 3, nstart=25) # performs the k-means cluster analysis
+fit.km
 ```
 
+Note that we are able to see the size of each cluster, and the cluster means (this is the actual k-means cluster analysis).
+
+We can then see how well the k-means clustering uncovered the actual structure of the data contained in the variable.
 ```{r}
 #cross-tabulation of Type and cluster membership:
 ct.km<-table(wine$Type, fit.km$cluster)
 ct.km
+```
+
+We can use an adjusted Rand index to quantify the agreement bewteen type and cluster. This provides a measure of the agreement between two partitions, adjusted for chance. -1 indicates no agreeement, while 1 indicates perfect agreement.
+
+```{r}
 #agreement given by index of -1 to 1
 library(flexclust)
 randIndex(ct.km)
 ```
+Our wine data has nearly 0.9 agreement between the wine varietal type and the cluster solution!
 
 We can also create a 2D representation of the cluster solution in order to visually interpret our results. 
 
 ```{r}
-k.means.fit <- kmeans(df, 3) # k = 3
-attributes(k.means.fit) # this contains the elements of the cluster output
+fit.km$cluster # these are each of the clusters
 ```
 
 ```{r}
 library(cluster)
-clusplot(df, k.means.fit$cluster, main='2D Representation of the Cluster solution',
-         color=TRUE, shade=TRUE,
-         labels=2, lines=0)
+clusplot(df, fit.km$cluster, main='2D Representation of the Cluster Solution',
+         color=TRUE, shade=TRUE, plotchar = TRUE, labels=2, lines=0)
 ```
 
 ## Example 2: Seed Data
