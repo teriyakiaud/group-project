@@ -81,7 +81,7 @@ Argote-Espino et al (2013) seeks to better understand the economic and political
 Johnson and Johnson (1975) seek to create a chronology for the Hopewell culture located near Kansas City, Missouri. To do this they looked at four site all within a twenty mile radius of the Missouri River Valley located north of Kansas City. From there they used K-means analysis to observe 863 ceramic rims, and cluster them into groups based on the characteristics of the rims. Johnson and Johnson (1975) then compared these clusters with previously excavated ceramic rim in association with radiocarbon dates. They found a relationship between radiocarbon dates and the clusters and concluded that their K-means analysis can be used to create a chronology of the area.
 
 
-These are just some off the examples in how K-means cluster analysis is used in archaeology and geology. This method is also used frequently in biological, behavioral sciences, marketing, genetic, and medical research. Check out these links below to see examples of K-means clusters being used in both genetics and marketing.
+These are just some of the examples in how K-means cluster analysis is used in archaeology and geology. This method is also used frequently in biological, behavioral sciences, marketing, genetic, and medical research. Check out these links below to see examples of K-means clusters being used in both genetics and marketing.
 
 [Tamayo,Pablo, Donna Slonim, Jill Mesirov, Qing Zhu, Sutisak Kitareewan, Ethan Dmitrovsky, Eric S. Lander, and Todd R. Golub. (1998). Interpreting patterns of gene expression with self-organizing maps: Methods and application to hematopoietic differentiation. PNAS 1999 96 (6) 2907-2912.](http://www.pnas.org/content/96/6/2907.full.pdf)
 
