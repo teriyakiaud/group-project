@@ -7,3 +7,8 @@ output: html_document
 mydata<-read.csv(file = "tabseeddata.csv", header = TRUE, sep = ",")
 mydata
 ```
+
+```{r}
+library(curl)
+curl(https://raw.githubusercontent.com/teriyakiaud/group-project/master/tabseeddata.csv)
+```
