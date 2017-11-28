@@ -285,8 +285,8 @@ clusplot(ds, fit.kmseed$cluster, main='2D Representation of the Cluster Solution
   * [Wu, Junjie. (2012). Advances in K-means Clustering: A Data Mining Thinking. PhD dissertation, Department of Information Systems, Tsinghua University, Beijing, China](https://link.springer.com/book/10.1007%2F978-3-642-29807-3)
 
   * [M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, and S. Zak. (2012). 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24.](https://www.researchgate.net/publication/234073581_Seeds_dataset) 
-       (http://www.ibspan.waw.pl/~pakowal/publikacje/Charytanowicz_et_al%20A%20Complete%20Gradient%20Clustering%20Algorithm%20for%20Features%20Analysis%20of%20X-ray%20Images.pdf)  
-
+       
+       
 **Used only for Recent Research and Applications**
   
   * [Argote-Espino, Denisse, Jesús Solé, Pedro López-García, and Osvaldo Sterpone. (2013). Geochemical characterisation of Otumba obsidian sub-sources (Central Mexico) by inductively coupled plasma mass spectrometry and density-based spatial clustering of applications with noise statistical analysis. Open Journal of Archaeology, 1(18): 85-88.](http://www.pagepress.org/journals/index.php/arc/article/view/arc.2013.e18/4167)
