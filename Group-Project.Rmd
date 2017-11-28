@@ -242,7 +242,7 @@ fit.kmseed$centers
 ```
 
 We can compare our results with the results of the original paper. 
-![](https://github.com/teriyakiaud/group-project/blob/master/Capture.PNG)
+![](https://raw.githubusercontent.com/teriyakiaud/group-project/master/Capture.PNG)
 
 ```{r}
 ct.kmseed<-table(seeddata$Variety, fit.kmseed$cluster)
