@@ -10,7 +10,7 @@ output:
 # Cluster Analysis
 ## Preliminaries
 
-* Install the following packages in R: [{rattle.data}](https://cran.r-project.org/web/packages/rattle.data/rattle.data.pdf), [{NbClust}](https://cran.r-project.org/web/packages/NbClust/NbClust.pdf), [{flexclust}](https://cran.r-project.org/web/packages/flexclust/flexclust.pdf), [{curl}](https://cran.r-project.org/web/packages/curl/curl.pdf)
+* Install the following packages in R: [{rattle.data}](https://cran.r-project.org/web/packages/rattle.data/rattle.data.pdf), [{NbClust}](https://cran.r-project.org/web/packages/NbClust/NbClust.pdf), [{flexclust}](https://cran.r-project.org/web/packages/flexclust/flexclust.pdf), [{curl}](https://cran.r-project.org/web/packages/curl/curl.pdf) [{cluster}] (https://cran.r-project.org/web/packages/cluster/index.html)
 
 ## Objectives
 In this module we will learn about cluster analysis, specifically k-means clustering. We will discuss the pros and cons of this method, and why its application is useful. We will work through two examples to understand how k-means works.
@@ -90,7 +90,6 @@ These are just some of the examples in how K-means cluster analysis is used in a
 ## Useful Skills You'll Learn Today
   Determing the number of clusters needed for a cluster analysis
   Clustering two different data sets
-  Making 3D graph of clustered data
   
 ## Example 1: Wine Data
 ![](https://media.giphy.com/media/3SB4hYwiSpIkw/giphy.gif)
@@ -162,6 +161,12 @@ library(flexclust)
 randIndex(ct.km)
 ```
 
+```{r}
+library(cluster)
+clusplot(wine.stand, k.means.fit$cluster, main='2D representation of the Cluster solution',
+         color=TRUE, shade=TRUE,
+         labels=2, lines=0)
+```
 
 ## Example 2: Seed Data
 ### Obtaining the Seed Data File
