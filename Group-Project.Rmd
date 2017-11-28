@@ -216,12 +216,25 @@ library(knitr)
 ```
 
 ## Additional Resources and Useful Links
+
+**Used for constructing the module**
   
   * The Book of R Chapter 16: Cluster Analysis
   
   * [Wu, Junjie. (2012). Advances in K-means Clustering: A Data Mining Thinking. PhD dissertation, Department of Information Systems, Tsinghua University, Beijing, China](https://link.springer.com/book/10.1007%2F978-3-642-29807-3)
 
   * [M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, and S. Zak. (2012). 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24.](https://www.researchgate.net/publication/234073581_Seeds_dataset) 
+
+**Used only for Recent Research and Applications**
   
+  * [Argote-Espino, Denisse, Jesús Solé, Pedro López-García, and Osvaldo Sterpone. (2013). Geochemical characterisation of Otumba obsidian sub-sources (Central Mexico) by inductively coupled plasma mass spectrometry and density-based spatial clustering of applications with noise statistical analysis. Open Journal of Archaeology, 1(18): 85-88.](http://www.pagepress.org/journals/index.php/arc/article/view/arc.2013.e18/4167)
+  
+  * [Johnson, A., & Johnson, A. (1975). K-Means and Temporal Variability in Kansas City Hopewell Ceramics. American Antiquity, 40(3), 283-295.](https://www.cambridge.org/core/journals/american-antiquity/article/div-classtitlespan-classitalickspan-means-and-temporal-variability-in-kansas-city-hopewell-ceramicsdiv/659CD81F64D6ED29DB73C185729177A5)
+  
+  * [Punj, G., & Stewart, D. (1983). Cluster Analysis in Marketing Research: Review and Suggestions for Application. Journal of Marketing Research, 20(2), 134-148.](http://www.jstor.org/stable/3151680?seq=1#page_scan_tab_contents)
+  
+  * [Tamayo,Pablo, Donna Slonim, Jill Mesirov, Qing Zhu, Sutisak Kitareewan, Ethan Dmitrovsky, Eric S. Lander, and Todd R. Golub. (1998). Interpreting patterns of gene expression with self-organizing maps: Methods and application to hematopoietic differentiation. PNAS 1999 96 (6) 2907-2912.](http://www.pnas.org/content/96/6/2907.full.pdf)
+  
+  * [Yang, Huaijie, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, and Bo Guo. (2016). Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9.](https://ac.els-cdn.com/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=373203c8-cfd5-11e7-aa36-00000aacb35e&acdnat=1511390220_af008af7a4aad067a2555a4680bba341)
 
 
