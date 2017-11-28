@@ -60,6 +60,8 @@ Additionally, variables for K-means must be continuous; if you are working with 
   
 ### Why is this useful?
 K-means is a simple, efficient, and widely accepted method to partion data into meaningful groups; K-means is used as a benchmark to test newly created clustering techniques. 
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Iris_Flowers_Clustering_kMeans.svg/450px-Iris_Flowers_Clustering_kMeans.svg.png)
   
 ### Recent Research and Applications
 
@@ -101,11 +103,17 @@ R in Action asks you to download the rattle package, however the dataset we want
 library(rattle.data)
 ```
 
+First, we create a standardized dataframe.
 ```{r}
 data(wine, package="rattle.data")
 head(wine)
-df<-scale(wine[-1]) #this new dataframe contains a standardized dataset 
 ```
+
+```{r}
+df <- scale(wine[-1]) #this new dataframe contains a standardized dataset 
+```
+
+Next, we need to determine the number of clusters we want.
 
 ```{r}
 wssplot <- function(data, nc=15, seed=1234){ #where data is the dataset, nc is the maximum number of clusters to consider, and seed is the randomly generated dataset
@@ -140,36 +148,42 @@ barplot(table(nc$Best.n[1, ]),
         xlab= "Number of Clusters", ylab = "Number of Criteria", 
         main= "Number of Clusters Chosen by 26 Criteria")
 ```
+This figure shows the reccommended number of clusters (3) using 26 criteria provided by the NbClust package.
 
 ```{r}
 set.seed(1234)
-fit.km<-kmeans(df, 3, nstart=25)
-fit.km$size
-#this is the k means clusters analysis 
-fit.km$centers
+fit.km<-kmeans(df, 3, nstart=25) # performs the k-means cluster analysis
+fit.km
 ```
 
+Note that we are able to see the size of each cluster, and the cluster means (this is the actual k-means cluster analysis).
+
+We can then see how well the k-means clustering uncovered the actual structure of the data contained in the variable.
 ```{r}
 #cross-tabulation of Type and cluster membership:
 ct.km<-table(wine$Type, fit.km$cluster)
 ct.km
+```
+
+We can use an adjusted Rand index to quantify the agreement bewteen type and cluster. This provides a measure of the agreement between two partitions, adjusted for chance. -1 indicates no agreeement, while 1 indicates perfect agreement.
+
+```{r}
 #agreement given by index of -1 to 1
 library(flexclust)
 randIndex(ct.km)
 ```
+Our wine data has nearly 0.9 agreement between the wine varietal type and the cluster solution!
 
 We can also create a 2D representation of the cluster solution in order to visually interpret our results. 
 
 ```{r}
-k.means.fit <- kmeans(df, 3) # k = 3
-attributes(k.means.fit) # this contains the elements of the cluster output
+fit.km$cluster # these are each of the clusters
 ```
 
 ```{r}
 library(cluster)
-clusplot(df, k.means.fit$cluster, main='2D Representation of the Cluster solution',
-         color=TRUE, shade=TRUE,
-         labels=2, lines=0)
+clusplot(df, fit.km$cluster, main='2D Representation of the Cluster Solution',
+         color=TRUE, shade=TRUE, plotchar = TRUE, labels=2, lines=0)
 ```
 
 ## Example 2: Seed Data
