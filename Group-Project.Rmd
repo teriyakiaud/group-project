@@ -90,7 +90,7 @@ These are just some of the examples in how K-means cluster analysis is used in a
 [Punj, G., & Stewart, D. (1983). Cluster Analysis in Marketing Research: Review and Suggestions for Application. Journal of Marketing Research, 20(2), 134-148.](http://www.jstor.org/stable/3151680?seq=1#page_scan_tab_contents)
 
 ## Useful Skills You'll Learn Today
-  Determing the number of clusters needed for a k-means cluster analysis and clustering two different data sets.
+  Determining the number of clusters needed for a k-means cluster analysis and clustering two different data sets.
   
 ## Example 1: Wine Data
 ![](https://media.giphy.com/media/3SB4hYwiSpIkw/giphy.gif)
