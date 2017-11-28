@@ -250,7 +250,8 @@ fit.kmseed$size
 fit.kmseed$centers
 ```
 
-We can compare our results with the results of the original paper. 
+We can compare our results with the results of the original paper and see that while they are similar, they are not the exact same result. However, since k-means cluster analysis is a random algorithm, this result is entirely probable. 
+
 ![](https://raw.githubusercontent.com/teriyakiaud/group-project/master/Capture.PNG)
 
 ```{r}
