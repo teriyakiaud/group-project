@@ -52,9 +52,9 @@ K-means analysis is efficient, simple, robust, and can be adapted to data with c
  
 ####Cons
 There are three main issues with cluster analysis: 
-1. There are essentially an infinite number of ways the data can be clustered 
-2. There is no accepted theoretical framework about how to perform cluster analyis 
-3. There is no strict definition of what a cluster is (the users define what a cluster means for their specific situation). This means that users should know what they want to understand from their data and then choose the approprite type of cluster analysis to answer those specific questions. 
+  1. There are essentially an infinite number of ways the data can be clustered 
+  2. There is no accepted theoretical framework about how to perform cluster analyis 
+  3. There is no strict definition of what a cluster is (the users define what a cluster means for their specific situation). This means that users should know what they want to understand from their data and then choose the approprite type of cluster analysis to answer those specific questions. 
 
 Additionally, variables for K-means must be continuous; if you are working with categorical data, another method must be used. Outliers can greatly affect results. K-means also performs poorly with convex clusters (for example, a binomial cluster), and with non-globular clusters. The results of K-means is a set of clusters which are generally uniform in size even if the original data had clusters of different sizes. 
   
