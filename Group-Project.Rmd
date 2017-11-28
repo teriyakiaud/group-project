@@ -254,8 +254,6 @@ randIndex(ct.kmseed)
 **Used for constructing the module**
   
   * The Book of R Chapter 16: Cluster Analysis
-  
-  * [Wu, Junjie, 2012. Advances in K-means Clustering: A Data Mining Thinking. PhD dissertation, Department of Information Systems, Tsinghua University, Beijing, China](https://link.springer.com/book/10.1007%2F978-3-642-29807-3)
 
   * [Wu, Junjie. (2012). Advances in K-means Clustering: A Data Mining Thinking. PhD dissertation, Department of Information Systems, Tsinghua University, Beijing, China](https://link.springer.com/book/10.1007%2F978-3-642-29807-3)
 
