@@ -7,7 +7,7 @@ output:
     toc_float: TRUE
 ---
 
-# Cluster Analysis
+# K-Means Analysis
 ## Preliminaries
 
 * Install the following packages in R: [{rattle.data}](https://cran.r-project.org/web/packages/rattle.data/rattle.data.pdf), [{NbClust}](https://cran.r-project.org/web/packages/NbClust/NbClust.pdf), [{flexclust}](https://cran.r-project.org/web/packages/flexclust/flexclust.pdf), [{curl}](https://cran.r-project.org/web/packages/curl/curl.pdf), [{cluster}](https://cran.r-project.org/web/packages/cluster/index.html)
@@ -52,9 +52,9 @@ K-means analysis is efficient, simple, robust, and can be adapted to data with c
  
 ####Cons
 There are three main issues with cluster analysis: 
-1. There are essentially an infinite number of ways the data can be clustered 
-2. There is no accepted theoretical framework about how to perform cluster analyis 
-3. There is no strict definition of what a cluster is (the users define what a cluster means for their specific situation). This means that users should know what they want to understand from their data and then choose the approprite type of cluster analysis to answer those specific questions. 
+  1. There are essentially an infinite number of ways the data can be clustered 
+  2. There is no accepted theoretical framework about how to perform cluster analyis 
+  3. There is no strict definition of what a cluster is (the users define what a cluster means for their specific situation). This means that users should know what they want to understand from their data and then choose the approprite type of cluster analysis to answer those specific questions. 
 
 Additionally, variables for K-means must be continuous; if you are working with categorical data, another method must be used. Outliers can greatly affect results. K-means also performs poorly with convex clusters (for example, a binomial cluster), and with non-globular clusters. The results of K-means is a set of clusters which are generally uniform in size even if the original data had clusters of different sizes. 
   
@@ -90,10 +90,10 @@ These are just some of the examples in how K-means cluster analysis is used in a
 [Punj, G., & Stewart, D. (1983). Cluster Analysis in Marketing Research: Review and Suggestions for Application. Journal of Marketing Research, 20(2), 134-148.](http://www.jstor.org/stable/3151680?seq=1#page_scan_tab_contents)
 
 ## Useful Skills You'll Learn Today
-  Determining the number of clusters needed for a k-means cluster analysis 
-  Clustering two different data sets
-  Create a 2D representation of analysis
-  Justify agreement of analysis using Rand index
+  1. Determining the number of clusters needed for a k-means cluster analysis 
+  2. Clustering two different data sets
+  3. Create a 2D representation of analysis
+  4. Justify agreement of analysis using Rand index
   
 ## Example 1: Wine Data
 ![](https://media.giphy.com/media/3SB4hYwiSpIkw/giphy.gif)
