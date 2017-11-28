@@ -63,11 +63,8 @@ K-means is a simple, efficient, and widely accepted method to partion data into 
   
 ### Recent Research and Applications
 
-Cluster analysis is commonly used in the biological and behavioral sciences, marketing, archaeology, and medical research.
+K-means clustering analysis is a common way to group and interpret large sets of data regardless of the distribution. Here are three ways in which how researchers used k-means to analyze and interpret data.  
 
-Check out some of these examples:
-<<<<<<< HEAD
-  
 [Yang, Huaijie, Heping Pan, Huolin Ma, Ahmed Amara Konaté, Jing Yao, and Bo Guo. (2016). Performance of the synergetic wavelet transform and modified K-means clustering in lithology classification using nuclear log. Journal of Petroleum Science and Engineering, 144:1-9.](https://ac.els-cdn.com/S0920410516300742/1-s2.0-S0920410516300742-main.pdf?_tid=373203c8-cfd5-11e7-aa36-00000aacb35e&acdnat=1511390220_af008af7a4aad067a2555a4680bba341)
 
 Yang et al. (2016) used synergetic wavelet transform and K-means clustering to identify types of metamorphic rocks from the Chinese Continental Scientific Drilling Main Hole near the village of Maobei, China. They performed multiple wave functions on previously document well logs, a detailed record of the geological changes and characteristics of a stratigraphy. Yang et al. (2016) then used a K-means clustering algorithm to group the observed metamorphic rock into five categories: orthogneiss, amphibolites, eclogite, paragneiss, and ultramafic, the five most common metamorphic rock at this site. Next, Yang et al. (2016) analyzed the accuracy of identifying each type of metamorphic rock by comparing the results of the K-means analysis to the well logs. They reported accuracies ranging from 94.51% to 70.58%. They conclude their article by suggesting that through the use of synergetic wavelet transform and K-means clustering, the accuracy of identifying metamorphic rocks increases, and the time spent computing this data decreases. 
@@ -80,11 +77,16 @@ Argote-Espino et al (2013) seeks to better understand the economic and political
 
 =======
 
-[Punj, G., & Stewart, D. (1983). Cluster Analysis in Marketing Research: Review and Suggestions for Application. Journal of Marketing Research, 20(2), 134-148. doi:10.2307/3151680](http://www.jstor.org/stable/3151680?seq=1#page_scan_tab_contents)
+[Johnson, A., & Johnson, A. (1975). K-Means and Temporal Variability in Kansas City Hopewell Ceramics. American Antiquity, 40(3), 283-295.](https://www.cambridge.org/core/journals/american-antiquity/article/div-classtitlespan-classitalickspan-means-and-temporal-variability-in-kansas-city-hopewell-ceramicsdiv/659CD81F64D6ED29DB73C185729177A5)
 
-[Tamayo,Pablo, Donna Slonim, Jill Mesirov, Qing Zhu, Sutisak Kitareewan, Ethan Dmitrovsky, Eric S. Lander, and Todd R. Golub. (1998). Interpreting patterns of gene expression with self-organizing maps: Methods and application to hematopoietic differentiation. PNAS 1999 96 (6) 2907-2912; doi:10.1073/pnas.96.6.2907](http://www.pnas.org/content/96/6/2907.full.pdf)
+Johnson and Johnson (1975) seek to create a chronology for the Hopewell culture located near Kansas City, Missouri. To do this they looked at four site all within a twenty mile radius of the Missouri River Valley located north of Kansas City. From there they used K-means analysis to observe 863 ceramic rims, and cluster them into groups based on the characteristics of the rims. Johnson and Johnson (1975) then compared these clusters with previously excavated ceramic rim in association with radiocarbon dates. They found a relationship between radiocarbon dates and the clusters and concluded that their K-means analysis can be used to create a chronology of the area.
+=======
 
-[Johnson, A., & Johnson, A. (1975). K-Means and Temporal Variability in Kansas City Hopewell Ceramics. American Antiquity, 40(3), 283-295. doi:10.2307/279690](https://www.cambridge.org/core/journals/american-antiquity/article/div-classtitlespan-classitalickspan-means-and-temporal-variability-in-kansas-city-hopewell-ceramicsdiv/659CD81F64D6ED29DB73C185729177A5)
+These are just some off the examples in how K-means cluster analysis is used in archaeology and geology. This method is also used frequently in biological, behavioral sciences, marketing, genetic, and medical research. Check out these links below to see examples of K-means clusters being used in both genetics and marketing.
+
+[Tamayo,Pablo, Donna Slonim, Jill Mesirov, Qing Zhu, Sutisak Kitareewan, Ethan Dmitrovsky, Eric S. Lander, and Todd R. Golub. (1998). Interpreting patterns of gene expression with self-organizing maps: Methods and application to hematopoietic differentiation. PNAS 1999 96 (6) 2907-2912.](http://www.pnas.org/content/96/6/2907.full.pdf)
+
+[Punj, G., & Stewart, D. (1983). Cluster Analysis in Marketing Research: Review and Suggestions for Application. Journal of Marketing Research, 20(2), 134-148.](http://www.jstor.org/stable/3151680?seq=1#page_scan_tab_contents)
 
 ## Useful Skills You'll Learn Today
   * add to this at the end
