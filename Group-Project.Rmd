@@ -43,8 +43,8 @@ To do this, R uses an algorithm that partitions observations into K groups so th
 
 $$ ss(k) = \sum_{i=1}^n \sum_{j=0}^p (x_{ij} - \bar{x}_{kj})^2 $$
 k = cluster
-x_{ij} = the value of the jth variable for the ith observation
-\bar{x}_{kj} = the mean of the jth variable for the kth cluster
+$x_{ij}$ = the value of the jth variable for the ith observation
+$\bar{x}_{kj}$ = the mean of the jth variable for the kth cluster
 p = the number of variables
 
 ####Pros
@@ -52,9 +52,10 @@ K-means analysis is efficient, simple, robust, and can be adapted to data with c
  
 ####Cons
 There are three main issues with cluster analysis: 
-  1. There are essentially an infinite number of ways the data can be clustered 
-  2. There is no accepted theoretical framework about how to perform cluster analyis 
-  3. There is no strict definition of what a cluster is (the users define what a cluster means for their specific situation). This means that users should know what they want to understand from their data and then choose the appropriate type of cluster analysis to answer those specific questions. 
+
+    1. There are essentially an infinite number of ways the data can be clustered 
+    2. There is no accepted theoretical framework about how to perform cluster analyis 
+    3. There is no strict definition of what a cluster is (the users define what a cluster means for their specific situation). This means that users should know what they want to understand from their data and then choose the appropriate type of cluster analysis to answer those specific questions. 
 
 Additionally, variables for K-means must be continuous; if you are working with categorical data, another method must be used. Outliers can greatly affect results. K-means also performs poorly with convex clusters (for example, a binomial cluster), and with non-globular clusters. The results of K-means is a set of clusters which are generally uniform in size even if the original data had clusters of different sizes. 
   
@@ -134,9 +135,11 @@ wssplot <- function(data, nc=15, seed=1234){ #where data is the dataset, nc is t
 ```{r}
 wssplot(df)
 ```
-K means, unlike other methods of clustering, requires that the user specify the number of clusters to make. Instead of picking a random number of clusters, one can look at a bend in a graph to determine the number of clusters to use. The graph we have plotted above has a bend at three, which suggests we should use three clusters. This graph is especially useful if you know nothing about your dataset. 
 
-A graph similar to a Cattell Scree test, which is used in Principle Components Analysis and Kabacoff, suggests using the NbClust package as a guide for determing the number of clusters. Kabacoff also suggests plotting total within-groups sum of squares against number of clusters in the k-means solution. More information about Scree tests and an example is in *R in Action* section 14.2.1. 
+
+K-means, unlike other methods of clustering, requires that the user specify the number of clusters to make. Instead of picking a random number of clusters, one can look at a bend in a graph to determine the number of clusters to use. The graph we have plotted above has a bend at three, which suggests we should use three clusters. This graph is especially useful if you know nothing about your dataset. 
+
+*R in Action* suggests using the NbClust package as a guide for determing the number of clusters. They also suggests plotting total within-groups sum of squares against number of clusters in the K-means solution. More information about Scree tests and an example is in section 14.2.1 of the book. 
 
 The NbClust package allows the user to determine the optimum number of clusters for a particular dataset, and provides different clustering schemes. Clusters can be determined for several methods. In this case we are using the K-means method, however seven other methods are available (including average, median, centroid, etc.). NbClust can also select the best clustering method for a particular dataset if, for example, you want to maximize the difference between hierarchy members. 
 
@@ -269,7 +272,7 @@ ct.kmseed
 library(flexclust)
 randIndex(ct.kmseed)
 ```
-Here, we see that our seed data has a 0.96 agreement!
+Here, we see that our seed data has a 0.96 agreement between the seed variety and the cluster solution!
 
 Finally, let's create a 2D representation of the cluster solution.
 ```{r}
