@@ -82,9 +82,6 @@ Argote-Espino et al. (2013) seek to better understand the economic and political
 
 Johnson and Johnson (1975) seek to create a chronology for the Hopewell culture located near Kansas City, Missouri. To do this they looked at four sites within a 20 mile radius of the Missouri River Valley, located north of Kansas City. From there they used K-means analysis to observe 863 ceramic rims, and cluster them into groups based on the characteristics of the rims. Johnson and Johnson (1975) compared these clusters with previously excavated ceramic rims in association with radiocarbon dates. They found a relationship between radiocarbon dates and the clusters and concluded that their K-means analysis can be used to create a chronology of the area.
 
-
-
-
 These are just some examples of how K-means cluster analysis is used in archaeology and geology. This method is also used frequently in biology, behavioral sciences, marketing, genetics, and medical research. Check out these links below to see examples of K-means clusters being used in both genetics and marketing.
 
 [Tamayo,Pablo, Donna Slonim, Jill Mesirov, Qing Zhu, Sutisak Kitareewan, Ethan Dmitrovsky, Eric S. Lander, and Todd R. Golub. (1998). Interpreting patterns of gene expression with self-organizing maps: Methods and application to hematopoietic differentiation. PNAS 1999 96 (6) 2907-2912.](http://www.pnas.org/content/96/6/2907.full.pdf)
@@ -98,6 +95,7 @@ These are just some examples of how K-means cluster analysis is used in archaeol
   4. How to justify agreement of the analyses using an adjusted Rand index
   
 ## Example 1: Wine Data
+
 ![](https://media.giphy.com/media/3SB4hYwiSpIkw/giphy.gif)
 
 
@@ -132,24 +130,28 @@ wssplot <- function(data, nc=15, seed=1234){ #where data is the dataset, nc is t
   plot(1:nc, wss, type="b", xlab="Number of Clusters",
        ylab="Within groups sum of squares")}
 ```
- 
-K means, unlike other methods of clustering, requires that the user specify the number of clusters to make. Instead of picking a random number of clusters, one can look at a bend in a graph to determine the number of clusters to use. The graph we made has a bend at three which suggests we should use three clusters. This graph is especially useful if you know nothing about your dataset. 
-
-A graph similar to a Cattell Scree test, which is used in Principle Components Analysis and Kabacoff suggests using the NbClust package as a guide for determing the number of clusters. Kabacoff also suggests plotting the following: total within-groups sum of squares against number of clusters in the k-means solution. More information about a Scree test and an example of one is in "R in Action" 14.2.1. 
 
 ```{r}
 wssplot(df)
+```
+K means, unlike other methods of clustering, requires that the user specify the number of clusters to make. Instead of picking a random number of clusters, one can look at a bend in a graph to determine the number of clusters to use. The graph we have plotted above has a bend at three, which suggests we should use three clusters. This graph is especially useful if you know nothing about your dataset. 
+
+A graph similar to a Cattell Scree test, which is used in Principle Components Analysis and Kabacoff, suggests using the NbClust package as a guide for determing the number of clusters. Kabacoff also suggests plotting total within-groups sum of squares against number of clusters in the k-means solution. More information about Scree tests and an example is in *R in Action* section 14.2.1. 
+
+The NbClust package allows the user to determine the optimum number of clusters for a particular dataset, and provides different clustering schemes. Clusters can be determined for several methods. In this case we are using the K-means method, however seven other methods are available (including average, median, centroid, etc.). NbClust can also select the best clustering method for a particular dataset if, for example, you want to maximize the difference between hierarchy members. 
+
+```{r}
 library(NbClust)
 set.seed(1234)
 devAskNewPage(ask=TRUE)
 ```
 
-The NbClust package allows the user to determine the optimum number of clusters for a particular dataset and provides different clustering schemes. Clusters can be determined for several methods. In this case we are using the k-means method, however seven other methods are available (including average, median, centroid, etc.). NbClust can also select the best clustering method for a particular dataset if you, for example, want to maximize the difference between hierarchy members. 
-
 ```{r}
 nc<-NbClust(df, min.nc=2, max.nc=15, method="kmeans") #this is how the number of clusters is determined
 table(nc$Best.n[1, ])
 ```
+
+Here we see that 15 of the indices proposed 3 as the best number of clusters to use. According to the majority rule, this is what we should use.
 
 ```{r, eval = FALSE}
 barplot(table(nc$Best.n[1, ]),
@@ -164,9 +166,10 @@ fit.km<-kmeans(df, 3, nstart=25) # performs the k-means cluster analysis
 fit.km
 ```
 
-Note that we are able to see the size of each cluster, and the cluster means (this is the actual k-means cluster analysis).
+Note that we are able to see the size of each cluster, and the cluster means (this is the actual K-means cluster analysis).
 
-We can then see how well the k-means clustering uncovered the actual structure of the data contained in the variable.
+We can then see how well the K-means clustering uncovered the actual structure of the data contained in the variable.
+
 ```{r}
 #cross-tabulation of Type and cluster membership:
 ct.km<-table(wine$Type, fit.km$cluster)
@@ -180,12 +183,10 @@ We can use an adjusted Rand index to quantify the agreement bewteen type and clu
 library(flexclust)
 randIndex(ct.km)
 ```
-Our wine data has nearly 0.9 agreement between the wine varietal type and the cluster solution!
-
-If our agreement had not been as high, we would want to use a different clustering method.
+Our wine data has nearly 0.9 agreement between the wine varietal type and the cluster solution! If our agreement had not been as high, we would want to use a different clustering method.
 
 
-We can also create a 2D representation of the cluster solution in order to visually interpret our results. 
+Finally, we can create a 2D representation of the cluster solution in order to visually interpret our results. 
 ```{r}
 fit.km$cluster # these are each of the clusters
 ```
@@ -197,13 +198,14 @@ clusplot(df, fit.km$cluster, main='2D Representation of the Cluster Solution',
 ```
 
 ## Example 2: Seed Data
-### Obtaining the Seed Data File
+
 ![](https://i.imgur.com/cuW8K7N.gif)
 
-Our next example uses a seed dataset. This dataset contains 7 measurements for geometric properties of 210 kernels from 3 different varieties of wheat. This dataset is publicly available, though we will download it from our github repository as we have already converted it into a csv file.
+Our next example uses data on seeds. This dataset contains 7 measurements for geometric properties of 210 kernels from 3 different varieties of wheat. This dataset is publicly available, though we will download it from our Github repository as we have already converted it into a csv file.
 
-First, we will create a standardized dataframe. 
+First, we create a standardized dataframe. 
 ```{r}
+# obtaining the dataset
 library(curl)
 f <- curl("https://raw.githubusercontent.com/teriyakiaud/group-project/master/tabseeddata.csv")
 seeddata<-read.csv(file = f, header = TRUE, sep = ",")
@@ -211,7 +213,7 @@ head(seeddata)
 ds<- scale(seeddata[-1])
 ```
 
-Just as we did in the first example, we need to figure out how many clusters to use.
+Just as in the first example, we need to figure out how many clusters to use.
 ```{r}
 plot1 <- function(data = ds, nc=15, seed=1234){ 
   wss <- (nrow(data)-1)*sum(apply(data,2,var))
@@ -230,7 +232,7 @@ set.seed(1234)
 devAskNewPage(ask=TRUE)
 ```
 
-As in the wine dataset, we can see a clear decrease in the within group sum of squares between 1, 2, and 3 clusters and then a smaller decrease after. This suggests that 3 is an appropriate number of clusters to use. The figure also shows that there will most likely not be more than 15 clusters.
+As in the wine dataset, we can see a clear decrease in the within group sum of squares between 1, 2, and 3 clusters and then a smaller decrease after. This suggests that 3 is an appropriate number of clusters to use. The figure also shows that there will likely not be more than 15 clusters.
 
 We can also use NbClust to determine the optimum number of clusters.
 ```{r}
@@ -241,9 +243,10 @@ table(nc1$Best.n[1, ])
 
 ```{r}
 barplot(table(nc1$Best.n[1, ]),
-        xlab="Number of Clusters", ylab = "Number of Criteria", 
+        xlab= "Number of Clusters", ylab = "Number of Criteria", 
         main= "Number of Clusters Chosen by 26 Criteria")
 ```
+
 We can see that 20 of the indices proposed 3 as the best number of clusters. According to the majority rule, we should use 3 clusters.
 
 ```{r}
@@ -253,7 +256,7 @@ fit.kmseed$size
 fit.kmseed$centers
 ```
 
-We can compare our results with the results of the original paper and see that while they are similar, they are not the exact same result. However, since k-means cluster analysis is a random algorithm, this result is entirely probable. 
+We can compare our results with the results of the original paper and see that while they are similar, they are not the exact same result. However, since K-means cluster analysis is a random algorithm, this result is entirely probable. 
 
 ![](https://raw.githubusercontent.com/teriyakiaud/group-project/master/Capture.PNG)
 
@@ -290,7 +293,7 @@ clusplot(ds, fit.kmseed$cluster, main='2D Representation of the Cluster Solution
   * [M. Charytanowicz, J. Niewczas, P. Kulczycki, P.A. Kowalski, S. Lukasik, and S. Zak. (2012). 'A Complete Gradient Clustering Algorithm for Features Analysis of X-ray Images', in: Information Technologies in Biomedicine, Ewa Pietka, Jacek Kawa (eds.), Springer-Verlag, Berlin-Heidelberg, 2010, pp. 15-24.](https://www.researchgate.net/publication/234073581_Seeds_dataset) 
        
        
-**Used only for Recent Research and Applications**
+**Used for Recent Research and Applications**
   
   * [Argote-Espino, Denisse, Jesús Solé, Pedro López-García, and Osvaldo Sterpone. (2013). Geochemical characterisation of Otumba obsidian sub-sources (Central Mexico) by inductively coupled plasma mass spectrometry and density-based spatial clustering of applications with noise statistical analysis. Open Journal of Archaeology, 1(18): 85-88.](http://www.pagepress.org/journals/index.php/arc/article/view/arc.2013.e18/4167)
   
